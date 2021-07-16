@@ -1,1 +1,28 @@
 /* TODO Add site wide styles */
+
+.modal-form {
+  background-color: var(--shadow);
+  width: 250px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.modal-form > input {
+  border: 0;
+  border-radius: 3px;
+  border-bottom: 2px solid var(--purple);
+
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--background);
+
+  width: 100%;
+  margin: 15px 0px 20px 0px;
+  padding: 10px;
+  outline: 0;
+}
+
+.modal-form > input:focus {
+  border-bottom-color: var(--orange);
+}
