@@ -1,6 +1,6 @@
 /* TODO Add site wide styles */
 
-.modal-form {
+.modal {
   background-color: var(--shadow);
   width: 250px;
   padding: 25px;
@@ -8,7 +8,7 @@
   border-radius: 5px;
 }
 
-.modal-form > input {
+.modal > input {
   border: 0;
   border-radius: 3px;
   border-bottom: 2px solid var(--purple);
@@ -23,6 +23,26 @@
   outline: 0;
 }
 
-.modal-form > input:focus {
+.modal > input:focus {
   border-bottom-color: var(--orange);
 }
+
+button {
+  border: 1px solid var(--purple);
+  border-radius: 3px;
+
+  background-color: var(--background);
+
+  width: 100%;
+  font-weight: 700;
+  padding: .5em 1em;
+  margin-top: 20px;
+  transition: background-color 500ms, border 500ms, color 500ms;
+}
+
+button:hover {
+  background-color: var(--orange);
+  border: 2px solid white;
+  color: white;
+}
+

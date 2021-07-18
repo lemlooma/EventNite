@@ -19,33 +19,46 @@ function LoginForm() {
     );
   };
 
+  const demoLogin = () => {
+    const credential = 'DemoUser'
+    const password = 'password'
+    return dispatch(sessionActions.login({ credential, password }))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+       <>
+      <div className={`flex-container`}>
+        <form className='modal' onSubmit={handleSubmit}>
+          <ul>
+            { errors && errors.map((error, idx) => <li key={idx} style={{color: 'red'}}>{error}</li>)}
+          </ul>
+          <label>
+            Username or Email
+          </label>
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          <label>
+            Password
+          </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          <button type="submit">Log In</button>
+          <button onClick={() => demoLogin()}>Log In As Demo User</button>
+      </form>
+     </div>
+    </>
   );
 }
 
