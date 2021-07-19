@@ -1,7 +1,6 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 const { Validator } = require('sequelize');
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
@@ -49,12 +48,10 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   });
-
  User.associate = function(models) {
     // associations can be defined here
       // 1:Many, User <> Registrations, one user can have many registration entries
     User.hasMany(models.Registration, { foreignKey: 'userId'});
-
     // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
     const map = {
       through: 'Bookmark', // relationship exists 'through' the join table, bookmark
@@ -62,24 +59,17 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId', // key on User table to reference the join table
     }
     User.belongsToMany(models.Event, map);
-  };
-  return User;
-};
-
-
-User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
+ };
+ User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
   const { id, username, email } = this; // context will be the User instance
   return { id, username, email };
 };
-
 User.prototype.validatePassword = function (password) {
  return bcrypt.compareSync(password, this.hashedPassword.toString());
 };
-
 User.getCurrentUserById = async function (id) {
  return await User.scope('currentUser').findByPk(id);
 };
-
 User.login = async function ({ credential, password }) {
   const { Op } = require('sequelize');
   const user = await User.scope('loginUser').findOne({
@@ -94,7 +84,6 @@ User.login = async function ({ credential, password }) {
     return await User.scope('currentUser').findByPk(user.id);
   }
 };
-
 User.signup = async function ({ username, email, password }) {
   const hashedPassword = bcrypt.hashSync(password);
   const user = await User.create({
@@ -104,4 +93,5 @@ User.signup = async function ({ username, email, password }) {
   });
   return await User.scope('currentUser').findByPk(user.id);
 };
- 
+  return User;
+};
