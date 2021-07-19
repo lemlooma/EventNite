@@ -1,15 +1,15 @@
 :root {
   --text: #39364F;
   --background: #ffffff;
-  --shadow: #D3D3D3;
-  --orange: #8A817C;
-  --dark-orange: #D1410C;
-  --purple: #1E0A3C;
+  --shadow: black;
+  --orange: olive;
+
+  --purple: #000000;
   
 }
 
 .modal {
-  background-color: var(--shadow);
+  background-color: white ;
   width: 250px;
   padding: 25px;
   text-align: center;
@@ -17,39 +17,42 @@
 }
 
 .modal > input {
-  border: 0;
+  border: 1;
   border-radius: 3px;
-  border-bottom: 2px solid var(--purple);
+  /* border-bottom: 2px black; */
 
   display: block;
   box-sizing: border-box;
-  background-color: var(--background);
+  background-color: whitesmoke;
 
   width: 100%;
   margin: 15px 0px 20px 0px;
   padding: 10px;
-  outline: 0;
+  outline: 1;
 }
 
 .modal > input:focus {
-  border-bottom-color: var(--orange);
+  border-bottom-color: whitesmoke;
+   border-radius: 3px;
+  border-bottom: 2px solid var(--purple);
 }
 
 button {
-  border: 1px solid var(--purple);
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: var(--background);
+  background-color: white;
   width: 100%;
-  font-weight: 700;
+  font-weight: 600;
   padding: .5em 1em;
-  margin-top: 20px;
+ 
   transition: background-color 500ms, border 500ms, color 500ms;
 }
 
 button:hover {
-  background-color: var(--orange);
-  border: 2px solid white;
-  color: white;
+  background-color: black;
+  border: 2px solid ;
+  color:white;
+
 }
 
 
@@ -78,6 +81,7 @@ body {
   width: 100vw;
 }
 
+
 .nav{
   grid-area: nav;
   display: grid;
@@ -97,8 +101,8 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px 0px 20px 0px;
-}
 
+}
 
 /* NAV BAR */
 .nav-bar-fixed {
@@ -107,6 +111,7 @@ body {
   align-items: center;
 }
 
+/*logo css */
 .eventNite {
   width: 200px;
   margin-right: 250px;
@@ -115,27 +120,43 @@ body {
 .nav-link {
   text-decoration: none;
   color: black;
-
+  border: 1px solid white;
+  border-radius: 3px;
+  background-color: white;
+  width: 100%;
+  font-weight: 500;
+  padding: .5em 1em;
+  transition: background-color 500ms, border 500ms, color 500ms;
+  white-space: nowrap;
+  
 }
-.navlink:hover {
-  background-color: var(--orange);
-  border: 2px solid white;
+/* profile /logout links */
+.nav-link:hover{
+  background-color: black;
+  border: 1px solid black;
   color: white;
 }
-
 
 .nav-bar-links {
   display: flex;
   flex-direction: flex-end;
   align-items: center;
-  color: aqua;
-}
+  
+} 
+
+
+
+
+
+
+
+
 
 
 
 
 /* PROFILE PAGE */
-.profile-grid-container {
+/* .profile-grid-container {
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 1fr;
@@ -173,6 +194,6 @@ body {
   margin: 0px;
   max-width: 90%;
 }
-
+ */
 
 

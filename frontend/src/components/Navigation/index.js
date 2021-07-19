@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
-// import ProfileButton from './ProfileButton';
+
 import SignupFormModal from '../SignupFormModal'
 import LoginFormModal from '../LoginFormModal';
+import { useHistory } from 'react-router';
 
 
 import * as sessionActions from '../../store/session';
@@ -14,10 +15,12 @@ function Navigation({ isLoaded }){
   const eventNite = "https://i.imgur.com/35II3Nw.png"
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory()
   // log out button functionality
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push('/')
   };
 
 // declare variable to store which links to render
@@ -52,13 +55,10 @@ function Navigation({ isLoaded }){
             {isLoaded && sessionLinks}
         </div>
     </div>
+    
   );
 }
 
 export default Navigation;
 
 
-// <a href="https://imgur.com/35II3Nw"><img src="https://i.imgur.com/35II3Nw.png" title="source: imgur.com" /></a>
-
-// <a href="https://imgur.com/glIlOf0"><img src="https://i.imgur.com/glIlOf0.png" title="source: imgur.com" /></a>
-// <a href="https://imgur.com/1dr2qYY"><img src="https://i.imgur.com/1dr2qYY.jpg" title="source: imgur.com" /></a>

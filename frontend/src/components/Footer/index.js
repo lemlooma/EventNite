@@ -6,8 +6,8 @@ function Footer(){
 
   return (
     <nav className={`footer`}>
-        <a className="nav-link" href={github} style={{ marginLeft: '20px' }}>Github Profile</a>
-        <a className="nav-link" href={linkedIn} style={{ marginLeft: '20px' }}>LinkedIn</a>
+        <a  href={github} style={{ marginLeft: '20px', color: "mediumblue",textDecoration:"none" }}>Github Profile</a>
+        <a  href={linkedIn} style={{ marginLeft: '20px', color: "mediumblue", textDecoration:"none"}}>LinkedIn</a>
     </nav>
   );
 }
