@@ -108,16 +108,21 @@ body {
 }
 
 .eventNite {
-  width: 70px;
-  margin-right: 50px;
+  width: 200px;
+  margin-right: 250px;
 }
 
-.nav-bar-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.nav-link {
+  text-decoration: none;
+  color: black;
+
 }
+.navlink:hover {
+  background-color: var(--orange);
+  border: 2px solid white;
+  color: white;
+}
+
 
 .nav-bar-links {
   display: flex;

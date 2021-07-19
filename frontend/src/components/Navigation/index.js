@@ -4,14 +4,14 @@ import { useDispatch,useSelector } from 'react-redux';
 // import ProfileButton from './ProfileButton';
 import SignupFormModal from '../SignupFormModal'
 import LoginFormModal from '../LoginFormModal';
-import './Navigation.css';
+
 
 import * as sessionActions from '../../store/session';
 
 
 
 function Navigation({ isLoaded }){
-  const eventNite = "https://github.com/eramsay20/ebrite/blob/master/wiki-resources/ebrite_logo_trans.png?raw=true"
+  const eventNite = "https://i.imgur.com/35II3Nw.png"
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   // log out button functionality
@@ -25,7 +25,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) { // if logged in, only show Profile button
     sessionLinks = (
       <>
-        <img alt={`eventNite`} style={{width: '18px', marginRight: '-5px'}} src="https://github.com/eramsay20/ebrite/blob/master/wiki-resources/user-profile-icon.png?raw=true"></img>
+        <img alt={`eventNite`} style={{width: '18px', marginRight: '-2px'}} src="https://i.imgur.com/glIlOf0.png"></img>
        <NavLink className="nav-link" to="/profile" style={{ marginLeft: '.5rem' }}> Profile </NavLink>
        <NavLink onClick={logout} className="nav-link" to="/" style={{ marginLeft: '.5rem' }}>Log Out</NavLink>
       </>
@@ -56,3 +56,9 @@ function Navigation({ isLoaded }){
 }
 
 export default Navigation;
+
+
+// <a href="https://imgur.com/35II3Nw"><img src="https://i.imgur.com/35II3Nw.png" title="source: imgur.com" /></a>
+
+// <a href="https://imgur.com/glIlOf0"><img src="https://i.imgur.com/glIlOf0.png" title="source: imgur.com" /></a>
+// <a href="https://imgur.com/1dr2qYY"><img src="https://i.imgur.com/1dr2qYY.jpg" title="source: imgur.com" /></a>

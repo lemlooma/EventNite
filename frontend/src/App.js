@@ -27,13 +27,12 @@ function App() {
               <Navigation isLoaded={isLoaded} />
               <Footer />
             </div>
-            {/* </Route> */}
-            {/* <Route path='/profile'>
+            </Route>
+            <Route path='/profile'>
             <div className={`app-grid-container`}>
               <Navigation isLoaded={isLoaded} />
-              <ProfileMain />
-              <Footer /> */}
-              {/* </div> */}
+              <Footer />
+              </div> 
           </Route>
           </Switch>
       )}
