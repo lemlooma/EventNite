@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         len: [3, 30],
         isNotEmail(value) {
@@ -17,10 +18,12 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(256),
       allowNull: false,
+      unique:true,
       validate: {
-        len: [3, 256]
+        len: [3, 256],
+        isEmail: true,
       },
     },
     hashedPassword: {
@@ -46,6 +49,22 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   });
+
+ User.associate = function(models) {
+    // associations can be defined here
+      // 1:Many, User <> Registrations, one user can have many registration entries
+    User.hasMany(models.Registration, { foreignKey: 'userId'});
+
+    // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
+    const map = {
+      through: 'Bookmark', // relationship exists 'through' the join table, bookmark
+      otherKey: 'eventId', // key on Event table to reference the join table
+      foreignKey: 'userId', // key on User table to reference the join table
+    }
+    User.belongsToMany(models.Event, map);
+  };
+  return User;
+};
 
 
 User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
@@ -85,8 +104,4 @@ User.signup = async function ({ username, email, password }) {
   });
   return await User.scope('currentUser').findByPk(user.id);
 };
-  User.associate = function(models) {
-    // associations can be defined here
-  };
-  return User;
-};
+ 
