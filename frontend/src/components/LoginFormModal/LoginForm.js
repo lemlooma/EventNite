@@ -20,7 +20,7 @@ function LoginForm() {
   };
 
   const demoLogin = () => {
-    const credential = 'DemoUser'
+    const credential = 'Demo-lition'
     const password = 'password'
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
@@ -36,20 +36,16 @@ function LoginForm() {
           <ul>
             { errors && errors.map((error, idx) => <li key={idx} style={{color: 'red'}}>{error}</li>)}
           </ul>
-          <label>
-            Username or Email
-          </label>
             <input
               type="text"
               value={credential}
+              placeholder= "Username or Email"
               onChange={(e) => setCredential(e.target.value)}
               required
             />
-          <label>
-            Password
-          </label>
             <input
               type="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

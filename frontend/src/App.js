@@ -1,28 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormModal";
-import * as sessionActions from "./store/session";
+
+import Footer from "./components/Footer";
+// import HomePage from "./components/HomePage";
 import Navigation from "./components/Navigation";
+// import ProfileMain from "./components/ProfileMain";
+
 
 import './index.css';
+import * as sessionActions from "./store/session";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-  }, [dispatch]);
+  }, [dispatch, isLoaded]);
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/signup">
-            <SignupFormPage />
+          <Route exact path='/'>
+            <div className={`app-grid-container`}>
+              <Navigation isLoaded={isLoaded} />
+              <Footer />
+            </div>
+            {/* </Route> */}
+            {/* <Route path='/profile'>
+            <div className={`app-grid-container`}>
+              <Navigation isLoaded={isLoaded} />
+              <ProfileMain />
+              <Footer /> */}
+              {/* </div> */}
           </Route>
-        </Switch>
+          </Switch>
       )}
     </>
   );

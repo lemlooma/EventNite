@@ -1,4 +1,12 @@
-/* TODO Add site wide styles */
+:root {
+  --text: #39364F;
+  --background: #ffffff;
+  --shadow: #D3D3D3;
+  --orange: #8A817C;
+  --dark-orange: #D1410C;
+  --purple: #1E0A3C;
+  
+}
 
 .modal {
   background-color: var(--shadow);
@@ -30,9 +38,7 @@
 button {
   border: 1px solid var(--purple);
   border-radius: 3px;
-
   background-color: var(--background);
-
   width: 100%;
   font-weight: 700;
   padding: .5em 1em;
@@ -45,4 +51,123 @@ button:hover {
   border: 2px solid white;
   color: white;
 }
+
+
+
+ /* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
+body {
+  background-color: var(--background);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  color: var(--text);
+}
+
+
+/* APP CONTAINER */
+.app-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1200px 1fr;
+  grid-template-rows: 70px 3fr 70px;
+  grid-template-areas:
+    '. nav .'
+    '. body .'
+    '. foot .';
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav{
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 600px 1fr 200px;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    'fixed links';
+}
+
+.body{
+  grid-area: body;
+  margin: 0px;
+}
+
+.footer{
+  grid-area: foot;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 20px 0px;
+}
+
+
+/* NAV BAR */
+.nav-bar-fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventNite {
+  width: 70px;
+  margin-right: 50px;
+}
+
+.nav-bar-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar-links {
+  display: flex;
+  flex-direction: flex-end;
+  align-items: center;
+  color: aqua;
+}
+
+
+
+
+/* PROFILE PAGE */
+.profile-grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'profile-settings profile-events';
+  width: 100%;
+}
+
+.profile-settings-container {
+  grid-area: profile-settings;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  margin-top: 60px;
+}
+
+.profile-events-container {
+  grid-area: profile-events;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 85%;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.profile-image { 
+  border-radius: 5px;
+  margin: 0px;
+  max-width: 90%;
+}
+
+
 

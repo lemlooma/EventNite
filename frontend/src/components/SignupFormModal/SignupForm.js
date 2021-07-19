@@ -30,42 +30,34 @@ function SignupForm() {
 
   return (
     <div className={`flex-container`}>
-      <form className='modal-form' onSubmit={handleSubmit}>
+      <form className='modal' onSubmit={handleSubmit}>
         <ul>
           { errors && errors.map((error, idx) => <li key={idx} style={{color: 'red'}}>{error}</li>)}
         </ul>
-        <label>
-          Username
-        </label>
           <input
             type="text"
+            placeholder= "Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-          />
-        <label>
-          Email
-        </label>
+            />
           <input
             type="text"
+            placeholder= "Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          />
-        <label>
-          Password
-        </label>
+            />
           <input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-          />
-        <label>
-          Confirm Password
-        </label>
+           />
           <input
             type="password"
+            placeholder = "Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
