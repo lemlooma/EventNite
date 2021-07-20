@@ -4,11 +4,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Categories', [
       { category: 'Free'},
-      { category: 'Dance/Parties'},
-      { category: 'Music'},
-      { category: 'Film'},
+      { category: 'Entertainment'},
       { category: 'Food & Drink'},
-      { category: 'Network'},
+      
     ], {});
   },
 
