@@ -39,13 +39,13 @@ name: {
     Event.hasMany(models.Registration, { foreignKey: 'eventId'});
     
     // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
-    const columnMapping = {
+    const mapping = {
       through: 'Bookmark', // relationship exists 'through' the join table, Favorite
       otherKey: 'userId', // key on Event table to reference the join table
       foreignKey: 'eventId', // key on User table to reference the join table
     };
 
-    Event.belongsToMany(models.User, columnMapping);
+    Event.belongsToMany(models.User, mapping);
     
   };
   return Event;
