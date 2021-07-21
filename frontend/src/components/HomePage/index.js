@@ -6,7 +6,7 @@ import Navigation from '../Navigation/index'
 
 // import { Events } from '../../../../backend/db/models/event'
 import { csrfFetch } from '../../store/csrf';
-import styles from'./HomePage.css'
+import css from'./HomePage.css'
 function HomePage() {
   const dispatch = useDispatch();
   const [events, setEvents] = useState([])
