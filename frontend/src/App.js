@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
+import EventDetails from "./components/EventDetails";
 import Navigation from "./components/Navigation";
 // import ProfileMain from "./components/ProfileMain";
 
@@ -33,6 +34,9 @@ function App() {
               <Footer />
               </div> 
           </Route>
+          <Route path="/event/:id" component={EventDetails} / >
+
+          
           </Switch>
       )}
     </>

@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     Event.belongsTo(models.Category, { foreignKey: 'categoryId'});
     // 1:Many, Event <> Registrations, one event has many registration entries
     Event.hasMany(models.Registration, { foreignKey: 'eventId'});
+    Event.hasMany(models.Bookmark, { foreignKey: "eventId" });
     
     // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
     const mapping = {

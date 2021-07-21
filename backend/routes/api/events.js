@@ -4,7 +4,9 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Event, User } = require('../../db/models');
+const { Event, User, Bookmark} = require('../../db/models');
+const { request } = require('../../app');
+
 
 const router = express.Router();
 
@@ -15,6 +17,11 @@ router.get('/', asyncHandler(async(req, res, next) => {
     console.log(events)
 }))
 
+router.get('/:id', asyncHandler(async(req, res, next) => {
+    const event = await Event.findByPk(req.params.id, {include:Bookmark});
+    res.json(event)
+    console.log("hello",event)
+}))
 
 module.exports = router;
 
