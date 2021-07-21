@@ -75,7 +75,7 @@ module.exports = {
 
        {
        name: 'Good Vibez Only',
-       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F121284241%2F195573731624%2F1%2Foriginal.jpg?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C67%2C582%2C291&s=e4ebb3cf3b6e823f0ce633cc0bbdfeb9',
+       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F139997585%2F181984346177%2F1%2Foriginal.20210627-183602?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C75%2C794%2C397&s=66a61c9219062d6add8368819182238f',
        location: ' NYC Midtown Gems Bar and Lounge • Brooklyn, NY Lounge • New York, NY',
        time: 'Thu, Jul 22, 7:00 PM ',
        detail: 'The time has come for Shaazaam Productions to vibe in NYC by popular demand !Located at the popular Gems Lounge and Bar in Brooklyn NYC, we present to you all the "Good Vibez Only" series. A New York based series bringing the Shaazaam Prod effect to our New York and New Jersey crowd ! Everything you need for a great time and much more ! SO RSVP and lets enjoy this Summer !',
@@ -95,7 +95,7 @@ module.exports = {
      },
       {
        name: 'AfroHouse / Afro Dance / Afrobeats with Meka',
-       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F133188817%2F195573731624%2F1%2Foriginal.20210423-173531?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C40%2C640%2C320&s=55910bd572fa63042998be31f70eb380',
+       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F137068771%2F80065352537%2F1%2Foriginal.20210530-210741?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=d5c059b859287c1314535bcef27cb948',
        location: 'Ripley-Grier Studios • Manhattan, NY',
        time: 'Thu, Jul 22, 8:00 PM',
        detail: '"AFRO DANCE STYLES / AFROBEATS with Meka" brings you the hottest AFRO dance moves from all over Africa filled with fun, energy, passion and lots of laughs.​ All level dancers are welcome!',
@@ -212,7 +212,7 @@ module.exports = {
        categoryId: 3
      },
       {
-       name: "Freakiest & Funniest Food Tour™ $75",
+       name: "Freakiest & Funniest Food Tour™ ",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F141701139%2F1365761876%2F1%2Foriginal.jpg?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=24%2C0%2C400%2C200&s=711cbefa23ad140bfe0e2a1da019659e',
        location: 'Get Freaky • New York, NY ',
        time: 'Sat, Jul 24, 7:00 PM',
@@ -222,11 +222,11 @@ module.exports = {
      },
 
      {
-       name: "Freakiest & Funniest Food Tour™ $75",
-       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F141701139%2F1365761876%2F1%2Foriginal.jpg?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=24%2C0%2C400%2C200&s=711cbefa23ad140bfe0e2a1da019659e',
-       location: 'Get Freaky • New York, NY ',
+       name: "WASTED AFTER WORK WEDNESDAYS",
+       pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F136730819%2F76934168611%2F1%2Foriginal.20210526-224101?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C139%2C680%2C340&s=458ee40606e8a4ac34fa55887a6398b9',
+       location: 'Taj II Lounge and Event Space • New York, NY ',
        time: 'Sat, Jul 24, 7:00 PM',
-       detail: "Are you ready for an exotic, adventurous, extreme, and yet delicious, and fun food tour? You are going to explore a wide variety of foods that you have never thought of tasting before. Some of you may have never even heard of these foods! They are, however, the favorite foods of millions of people worldwide. Aren’t you curious about why others love these foods so much? Is it because of their taste or nutritional benefits? Are you daring enough to explore them yourself?  Do you want to see your friends, family, or fellow tourists’ funky facial expressions as they try new exotic foods? Furthermore, we are going to have a chicken foot eating competition! This freaky tour is not only about food tastings but also about having a hilarious time with your friends, family, and/or fellow tourists. Come join us today for an adventurous food tour for only $75. All tastings are included.",
+       detail: "Are you tired of working? Had a bad day? Hate your boss? You need a drink mate. Come get wasted after work with us at Taj. We will call your uber home and talk bad about your boss with you. Open till 5AM. Muisc | Food | Drinks ",
        ticketCost: '50.00',
        categoryId: 3
      },

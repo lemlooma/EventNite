@@ -5,8 +5,8 @@ module.exports = {
  return queryInterface.bulkInsert('Registrations', [
       // demo user 1
          { eventId: 1, userId: 1, ticketNum: 1},
-      { eventId: 2, userId: 1, ticketNum: 1},
-      { eventId: 3, userId: 1, ticketNum: 1},
+      // { eventId: 2, userId: 1, ticketNum: 1},
+      // { eventId: 3, userId: 1, ticketNum: 1},
   //     { eventId: 4, userId: 1, ticketNum: 1},
   //     { eventId: 5, userId: 1, ticketNum: 1},
   //     // demo user 2
