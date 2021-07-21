@@ -36,7 +36,7 @@ function HomePage() {
         {events.map(event => 
         <Link to={`/event/${event.id}`}>
           <b className="eventName">{event.name}</b>
-          <img className="fitImg"src={event.image} alt={event.name}></img>
+          <img className="fitImg"src={event.pic} alt={event.name}></img>
           </Link>
         )}
       </div>
