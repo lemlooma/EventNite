@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Event = sequelize.define('Event', {
-name: {
+    name: {
       type: DataTypes.STRING(150),
       allowNull: false,
     },
-    image: {
+    pic: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },

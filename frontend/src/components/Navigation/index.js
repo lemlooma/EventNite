@@ -28,7 +28,6 @@ function Navigation({ isLoaded }){
   if (sessionUser) { // if logged in, only show Profile button
     sessionLinks = (
       <>
-        <img alt={`eventNite`} style={{width: '18px', marginRight: '-2px'}} src="https://i.imgur.com/glIlOf0.png"></img>
        <NavLink className="nav-link" to="/profile" style={{ marginLeft: '.5rem' }}> Profile </NavLink>
        <NavLink onClick={logout} className="nav-link" to="/" style={{ marginLeft: '.5rem' }}>Log Out</NavLink>
       </>

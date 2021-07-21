@@ -1,43 +1,46 @@
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react'
+import * as sessionActions from "../../store/session";
+import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom'
+import Navigation from '../Navigation/index'
 
-// // import { getEvents, getFavorites  } from '../../store/events';
-// // import MainPageEvents from '../MainPageEvents';
-// // import MainPageBanner from '../MainPageBanner';
-
-
-// function HomePage(){
-//   const dispatch = useDispatch();
-
-//   // load all events into events state
-// //   useEffect(()=>{
-// //     dispatch(getEvents())
-// //     dispatch(getFavorites())
-// //   }, [dispatch])
-
-//   // pull out list of events from state
-//   const events = useSelector(state => state.events.eventsList);
-//   const sessionUser = useSelector(state => state.session.user);
-//   const favorites = useSelector(state => state.events.favorites);
-
-//   // extract category names from events
-//   const categoryNames = events.map(e => e.Category.category)
-
-//   // simplify categoryNames into array of unique category names
-//   const categories = [];
-//   categoryNames.forEach(category => {
-//     if(!categories.includes(category)){
-//       categories.push(category);
-//     }
-//   })
-
-//   // pass categories and events to children components
-//   return (
-//     <div className={`body`}>
-//       <MainPageBanner categories={categories} events={events}/>
-//       <MainPageEvents favorites={favorites} user={sessionUser} categories={categories} events={events}/>
-//     </div>
-//   );
-// }
-
-// export default MainPage;
+// import { Events } from '../../../../backend/db/models/event'
+import { csrfFetch } from '../../store/csrf';
+import styles from'./HomePage.css'
+function HomePage() {
+  const dispatch = useDispatch();
+  const [events, setEvents] = useState([])
+  useEffect(() => {
+    (async function(){
+      const res = await csrfFetch('/api/events')
+      if (res.ok) {
+        const newEvents = await res.json()
+        setEvents(newEvents)
+      }
+    })()
+  }, [])
+  console.log('events!!', events)
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
+  
+  return isLoaded && (
+      <>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded}
+      <div className="photoContainer">
+      <img  alt='https://i0.wp.com/jandjtours.com/wp-content/uploads/2018/03/NYC-Banner-picture-1.png?ssl=1' alt='photo'></img>
+      </div>
+      <div className="eventsContainer">
+        {events.map(event => 
+        <Link to={`/event/${event.id}`}>
+          <b className="eventName">{event.name}</b>
+          <img className="fitImg"src={event.image} alt={event.name}></img>
+          </Link>
+        )}
+      </div>
+      </>
+  );
+}
+export default HomePage;

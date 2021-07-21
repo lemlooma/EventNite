@@ -1,0 +1,51 @@
+.photoContainer {
+    /* border-radius: 10px; */
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+          0 10px 10px rgba(0,0,0,0.22);
+    width: 100%;
+    height:50%;
+
+    position: relative;
+    background-image: url(https://i0.wp.com/jandjtours.com/wp-content/uploads/2018/03/NYC-Banner-picture-1.png?ssl=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* top: -10px; */
+    /* right: 10px */
+}
+
+.photo {
+    /* visibility: hidden; */
+   display: block;
+   margin: auto;
+   border-radius: 3px;
+}
+
+.fitImg {
+    width: 400px;
+    height: 300px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.eventsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    right: -65px;
+    text-align: center;
+    top: 40px
+}
+
+.eventName {
+    text-decoration: none;
+}

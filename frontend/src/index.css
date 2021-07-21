@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --text: #39364F;
   --background: #ffffff;
   --shadow: black;
@@ -6,7 +6,7 @@
 
   --purple: #000000;
   
-}
+} */
 
 .modal {
   background-color: white ;
@@ -79,7 +79,7 @@ body {
     '. foot .';
   height: 100vh;
   width: 100vw;
-}
+} 
 
 
 .nav{
