@@ -1,7 +1,7 @@
 // import ProfileWelcome from '../ProfileWelcome';
-// import React, { useSelector,useEffect } from 'react';
+// import React, { useEffect } from 'react';
 // // import { NavLink } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
+// import {useSelector, useDispatch } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 
 // function ProfileMain(){

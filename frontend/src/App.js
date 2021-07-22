@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import EventDetails from "./components/EventDetails";
+import CreateEvent from "./components/CreateEvent"
 import Navigation from "./components/Navigation";
 // import ProfileMain from "./components/ProfileMain";
 
@@ -22,22 +23,22 @@ function App() {
     <>
       {isLoaded && (
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <div>
+              <CreateEvent />
               <HomePage />
               <Footer />
             </div>
-            </Route>
-            <Route path='/profile'>
-            <div className={`app-grid-container`}>
-              <Navigation isLoaded={isLoaded}/>
-              <Footer />
-              </div> 
           </Route>
-          <Route path="/event/:id" component={EventDetails} / >
-
-          
-          </Switch>
+          <Route path="/profile">
+            <div className={`app-grid-container`}>
+              <Navigation isLoaded={isLoaded} />
+              {/* <ProfileMain /> */}
+              <Footer />
+            </div>
+          </Route>
+          <Route path="/event/:id" component={EventDetails} />
+        </Switch>
       )}
     </>
   );

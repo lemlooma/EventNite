@@ -14,16 +14,14 @@ const router = express.Router();
 router.get('/', asyncHandler(async(req, res, next) => {
     const events = await Event.findAll();
     res.json(events)
-    console.log(events)
+    // console.log(events)
 }))
 
 router.get('/:id', asyncHandler(async(req, res, next) => {
     const event = await Event.findByPk(req.params.id, {include:Bookmark});
     res.json(event)
-    console.log("hello",event)
+    // console.log("hello",event)
 }))
-
-module.exports = router;
 
 
 // //load registered events
@@ -46,6 +44,15 @@ module.exports = router;
 
 
 // // Posts
+
+router.post(
+  "/",
+  asyncHandler(async function (req, res) {
+    const event = await Event.create(req.body);
+    return res.json(event);
+  })
+);
+
 // //register 
 // router.post('/:id/registration', requireAuth, asyncHandler( async(req, res) => {
 //   const { ticketNum } = req.body; 

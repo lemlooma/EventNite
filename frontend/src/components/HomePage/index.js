@@ -18,7 +18,7 @@ function HomePage() {
         setEvents(newEvents)
       }
     })()
-  }, [])
+  }, )
   console.log('events!!', events)
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -29,9 +29,6 @@ function HomePage() {
       <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded}
-      <div className="photoContainer">
-      <img  src='https://i0.wp.com/jandjtours.com/wp-content/uploads/2018/03/NYC-Banner-picture-1.png?ssl=1' alt='photo'></img>
-      </div>
       <div className="eventsContainer">
         {events.map(event => 
         <Link to={`/event/${event.id}`}>

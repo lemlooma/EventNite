@@ -1,52 +1,59 @@
-.photoContainer {
-    /* border-radius: 10px; */
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-          0 10px 10px rgba(0,0,0,0.22);
-    width: 100vw;
-    height: auto;
-
-    position: relative;
-    background-image: url(https://i0.wp.com/jandjtours.com/wp-content/uploads/2018/03/NYC-Banner-picture-1.png?ssl=1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    /* top: -10px; */
-    /* right: 10px */
+.event-page-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  'event-header'
+  'event-description';
+  height: 80vh;
+  width: 95%;
 }
 
-.photo {
-    /* visibility: hidden; */
-   display: block;
-   margin: auto;
-   border-radius: 3px;
+
+
+.event-header-container {
+  grid-area: event-header;
+  display: flex;
+  height: 300px;
 }
 
-.fitImg {
-    width: 400px;
-    height: 300px;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    display: block;
-    margin: auto;
-    object-fit: cover;
-    border-radius: 30px;
-    padding: 20px;
+.event-image-container {
+  object-fit: cover;
+  width: 100%;
 }
 
-.eventsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    position: relative;
-    right: -65px;
-    text-align: center;
-    top: 40px
+.event-image {
+  object-fit: cover;
+  width: 50%;
+  max-height: 100%;
 }
 
-.eventName {
-    text-decoration: none;
-    color: black
+.event-header-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--peach);
+  padding: 20px 10px 20px 40px;
+  border-bottom: 5px solid var(--orange);
+}
+
+.event-register-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* EVENT PAGE BOTTOM */
+
+.event-body-container{
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  'summary .';
+  height: 100%;
+  width: 100%;
+}
+
+.event-summary{
+  padding: 0px 20px 10px 20px;
 }

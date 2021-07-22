@@ -28,8 +28,9 @@ function Navigation({ isLoaded }){
   if (sessionUser) { // if logged in, only show Profile button
     sessionLinks = (
       <>
-       <NavLink className="nav-link" to="/profile" style={{ marginLeft: '.5rem' }}> Profile </NavLink>
-       <NavLink onClick={logout} className="nav-link" to="/" style={{ marginLeft: '.5rem' }}>Log Out</NavLink>
+      <NavLink className="nav-link" to="/newevent" style={{ marginLeft: '.5rem' }}>Create Event</NavLink>
+      <NavLink className="nav-link" to="/profile" style={{ marginLeft: '.5rem' }}> Profile </NavLink>
+      <NavLink onClick={logout} className="nav-link" to="/" style={{ marginLeft: '.5rem' }}>Log Out</NavLink>
       </>
     );
   } else { // else, render login & signup links instead

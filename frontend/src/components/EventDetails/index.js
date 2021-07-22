@@ -5,6 +5,8 @@ import Navigation from "../Navigation/index";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+import EventPageHeader from "../EventPageHeader";
+
 // import { Events } from '../../../../backend/db/models/event'
 import { csrfFetch } from "../../store/csrf";
 import css from "./EventDetails.css";
@@ -58,8 +60,14 @@ function EventDetails() {
 
   return (
     <div>
-      Hello{" "}
-      <div>
+      <Navigation />
+      <EventPageHeader event={event} />
+      <h2 className="min-margin" style={{ textDecoration: "underline" }}>
+        Event Details
+      </h2>
+      <div className="event-body-container">
+        <p style={{ textAlign: "justify" }}>{event.detail}</p>
+        <div></div>
         {bookmark ? (
           <button onClick={() => testDelete()}>DELETE</button>
         ) : (
