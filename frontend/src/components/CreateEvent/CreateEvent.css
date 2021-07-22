@@ -1,0 +1,9 @@
+.input-container {
+     display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  'summary .';
+  height: 100%;
+  width: 100%;
+}

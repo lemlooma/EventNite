@@ -18,7 +18,7 @@ function HomePage() {
         setEvents(newEvents)
       }
     })()
-  }, )
+  }, [])
   console.log('events!!', events)
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -30,7 +30,7 @@ function HomePage() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded}
       <div className="eventsContainer">
-        {events.map(event => 
+        {events?.map(event => 
         <Link to={`/event/${event.id}`}>
           <b className="eventName">{event.name}</b>
           <img className="fitImg"src={event.pic} alt={event.name}></img>
