@@ -15,6 +15,8 @@ function EventDetails() {
   const sessionUserId = useSelector((state) => state.session.user?.id);
   const dispatch = useDispatch();
   const [event, setEvent] = useState([]);
+  const [bookmark, setBookmark] = useState({});
+
   const { id } = useParams();
   useEffect(() => {
     (async function () {
@@ -22,12 +24,12 @@ function EventDetails() {
       if (res.ok) {
         const newEvent = await res.json();
         setEvent(newEvent);
+    setBookmark(newEvent?.Bookmarks?.find((fav) => +fav.userId === +sessionUserId));
+
       }
     })();
   }, []);
-  let bookmark = event?.Bookmarks?.find(
-    (fav) => +fav.userId === +sessionUserId
-  );
+
 
   const test = async () => {
     const response = await csrfFetch("/api/bookmark", {
@@ -38,6 +40,7 @@ function EventDetails() {
       }),
     });
     const data = await response.json();
+    setBookmark(data)
     console.log(data);
   };
 
@@ -49,10 +52,9 @@ function EventDetails() {
         eventId: id,
       }),
     });
-    const data = await response.json();
-    console.log(data);
+      setBookmark(null);
   };
-  console.log({ sessionUserId, event, x: event?.Bookmarks, bookmark });
+  // console.log({ sessionUserId, event, x: event?.Bookmarks, bookmark });
   //   const [isLoaded, setIsLoaded] = useState(false);
   //   useEffect(() => {
   //     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -68,10 +70,10 @@ function EventDetails() {
       <div className="event-body-container">
         <p style={{ textAlign: "justify" }}>{event.detail}</p>
         <div></div>
-        {bookmark ? (
-          <button onClick={() => testDelete()}>DELETE</button>
+        {bookmark && bookmark.eventId ? (
+          <button onClick={() => testDelete()}>UNBOOKMARK</button>
         ) : (
-          <button onClick={() => test()}>Bookmark</button>
+          <button onClick={() => test()}>BOOKMARK</button>
         )}
       </div>
     </div>

@@ -25,19 +25,22 @@ function HomePage() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
   
-  return isLoaded && (
+  return (
+    isLoaded && (
       <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded}
-      <div className="eventsContainer">
-        {events?.map(event => 
-        <Link to={`/event/${event.id}`}>
-          <b className="eventName">{event.name}</b>
-          <img className="fitImg"src={event.pic} alt={event.name}></img>
-          </Link>
-        )}
-      </div>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded}
+        {/* <h1>Browse Events</h1> */}
+        <div className="eventsContainer">
+          {events?.map((event) => (
+            <Link to={`/event/${event.id}`}>
+              <b className="eventName">{event.name}</b>
+              <img className="fitImg" src={event.pic} alt={event.name}></img>
+            </Link>
+          ))}
+        </div>
       </>
+    )
   );
 }
 export default HomePage;

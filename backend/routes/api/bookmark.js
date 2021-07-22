@@ -23,7 +23,7 @@ router.post(
       });
     }
     res.json(bookmark);
-    console.log(bookmark);
+    // console.log(bookmark);
   })
 );
 
@@ -38,7 +38,7 @@ router.delete(
      await bookmark.destroy()
     }
     res.sendStatus(200);
-    console.log(bookmark);
+    // console.log(bookmark);
   })
 );
 

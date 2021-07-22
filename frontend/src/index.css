@@ -69,7 +69,7 @@ body {
 
 
 /* APP CONTAINER */
-.app-grid-container {
+/* .app-grid-container {
   display: grid;
   grid-template-columns: 1fr 1200px 1fr;
   grid-template-rows: 70px 3fr 70px;
@@ -79,7 +79,7 @@ body {
     '. foot .';
   height: 100vh;
   width: 100vw;
-} 
+}  */
 
 
 .nav{

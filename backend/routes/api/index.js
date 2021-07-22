@@ -9,6 +9,7 @@ router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/events', eventsRouter);
 router.use("/bookmark", bookmarkRouter);
+// router.use("/newevents", neweventRouter);
 
 
   

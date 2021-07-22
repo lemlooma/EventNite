@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage";
 import EventDetails from "./components/EventDetails";
 import CreateEvent from "./components/CreateEvent"
 import Navigation from "./components/Navigation";
-// import ProfileMain from "./components/ProfileMain";
+import ProfileMain from "./components/ProfileMain";
 
 import './index.css';
 import * as sessionActions from "./store/session";
@@ -25,7 +25,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <div>
-              <CreateEvent />
               <HomePage />
               <Footer />
             </div>
@@ -33,11 +32,18 @@ function App() {
           <Route path="/profile">
             <div className={`app-grid-container`}>
               <Navigation isLoaded={isLoaded} />
-              {/* <ProfileMain /> */}
+              <ProfileMain />
               <Footer />
             </div>
           </Route>
           <Route path="/event/:id" component={EventDetails} />
+          <Route path="/newevent" component={CreateEvent}>
+            <div>
+  
+              <CreateEvent />
+              <Footer />
+            </div>
+          </Route>
         </Switch>
       )}
     </>

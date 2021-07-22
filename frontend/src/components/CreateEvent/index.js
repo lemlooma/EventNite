@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { useHistory } from "react-router";
 import { addEvent } from "../../store/events";
-// import styles from "./addEvent.module.css";
+import css from "./CreateEvent.css";
 function AddEvent() {
   const [name, setName] = useState("");
   const [pic, setPic] = useState("");
@@ -29,8 +29,8 @@ function AddEvent() {
       time,
       location,
       detail,
-      ticketCost,
-      categoryId,
+      ticketCost:+ticketCost,
+      categoryId:1,
     };
     console.log(payload)
     let createdEvent = dispatch(addEvent(payload));
@@ -55,6 +55,7 @@ function AddEvent() {
             <label>
               Event Name
               <input
+                placeholder = "Event Name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -63,6 +64,7 @@ function AddEvent() {
             <label>
               Image
               <input
+                placeholder= "URL Address"
                 type="text"
                 value={pic}
                 onChange={(e) => setPic(e.target.value)}
@@ -71,6 +73,7 @@ function AddEvent() {
             <label>
               Date
               <input
+               placeholder= "Date"
                 type="text"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
@@ -79,6 +82,7 @@ function AddEvent() {
             <label>
               Location
               <input
+                placeholder= "Location"
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
@@ -87,18 +91,28 @@ function AddEvent() {
             <label>
               Ticket Price
               <input
+              placeholder= "Price"
                 type="number"
                 value={ticketCost}
                 onChange={(e) => setTicketCost(e.target.value)}
               />
             </label>
             <label>
-             Category Type
+              <label>
+                Event Details
+                <input
+                  placeholder="Event Details"
+                  type="text"
+                  value={detail}
+                  onChange={(e) => setDetail(e.target.value)}
+                />
+              </label>
+              {/* Category Type
               <input
                 type="text"
                 value={categoryId}
                 onChange={(e) => setCategoryId(e.target.value)}
-              />
+              /> */}
             </label>
             <button type="submit">Create Event!</button>
           </div>
