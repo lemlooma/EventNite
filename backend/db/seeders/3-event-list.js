@@ -94,7 +94,7 @@ module.exports = {
        categoryId: 2
      },
       {
-       name: 'AfroHouse / Afro Dance / Afrobeats with Meka',
+       name: 'AfroHouse / Afro Dance',
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F137068771%2F80065352537%2F1%2Foriginal.20210530-210741?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=d5c059b859287c1314535bcef27cb948',
        location: 'Ripley-Grier Studios • Manhattan, NY',
        time: 'Thu, Jul 22, 8:00 PM',
@@ -112,7 +112,7 @@ module.exports = {
        categoryId: 2
      },
      {
-       name: 'A Drinking Game NYC presents Space Jam',
+       name: 'A Drinking Game Space Jam',
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F140064261%2F180412965978%2F1%2Foriginal.20210628-145816?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C2901%2C3300%2C1650&s=164c02194bc9407d5bfdea3626d093ea',
        location: 'The Bell House • Brooklyn, NY',
        time: 'Fri, Jul 23, 8:00 PM',
@@ -130,7 +130,7 @@ module.exports = {
        categoryId: 2
      },
       {
-       name: "Sound Healing Performances featuring Asif Mian, Neel Murgai, and HPRIZM",
+       name: "Sound Healing Performances ",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F141219615%2F177235263687%2F1%2Foriginal.20210709-212152?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C67%2C6720%2C3360&s=50d0e0f24e6c032182ffee3e23f4ad0d',
        location: 'Queens Museum • Corona, NY',
        time: 'Sun, Jul 25, 2:00 PM',
@@ -139,7 +139,7 @@ module.exports = {
        categoryId: 2
      },
        {
-       name: "BEETHOVEN FEST! 1808 REDUX – FULL PASS",
+       name: "BEETHOVEN FEST! 1808 REDUX",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F138100071%2F338493478465%2F1%2Foriginal.20200410-041752?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C246%2C998%2C499&s=245f9cc6dbc4fe8ec2fab740b0553e44',
        location: 'West Side Symphony Orchestra • Manhattan, NY ',
        time: 'Fri, Feb 25, 6:30 PM',
@@ -157,7 +157,7 @@ module.exports = {
        categoryId: 2
      },
      {
-       name: "The Secret Eats of Chinatown, Manhattan Food Crawl",
+       name: "The Secret Eats ",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F141359535%2F78468053165%2F1%2Foriginal.20190211-153119?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C3264%2C1632&s=4b1e59783cd52436d9e32b399cdb2e57',
        location: 'Columbus Park (Corner of Bayard St & Mulberry St) • New York, NY',
        time: 'Sun, Aug 1, 6:30 PM',
@@ -166,7 +166,7 @@ module.exports = {
        categoryId: 3
      },
       {
-       name: "Williamsburg Bite Nites Food Tour",
+       name: "Williamsburg Bite Nites ",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F138774233%2F107125007415%2F1%2Foriginal.20210615-141705?h=2000&w=720&auto=format%2Ccompress&q=75&sharp=10&s=27443904d73714314269231472fbeab0',
        location: 'Williamsburg Mini Mall • New York, NY',
        time: 'Tues, Aug 2, 8:45 PM',
@@ -175,7 +175,7 @@ module.exports = {
        categoryId: 3
      },
       {
-       name: "Natural Dyeing with Food Scraps Workshop and Happy Hour (21+)",
+       name: "Natural Dyeing Food Scraps Workshop",
        pic: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F140207705%2F196599321851%2F1%2Foriginal.20210629-172502?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C648%2C3888%2C1944&s=4da6332c04e50d724d2b0dc6e0c9cd2a',
        location: 'LES Ecology Center • New York, NY',
        time: 'Thu, Jul 22, 6:00 PM',

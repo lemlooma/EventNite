@@ -14,13 +14,17 @@
     width: 400px;
     height: 300px;
     display: block;
-    /* margin: auto; */
     object-fit: cover;
     border-radius: 30px;
     padding: 20px;
-     /* transition: box-shadow .5s; */
-    /* box-shadow: 1px 1px 10px 1px grey;  */
-;
+   
+    
+}
+.fitImg:hover {
+    -webkit-transform: rotate(15deg) scale(1.4);
+	transform: rotate(0deg) scale(1.1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
 /* 
 #overlay{
