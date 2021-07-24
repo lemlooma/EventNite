@@ -58,10 +58,15 @@
     text-decoration-color: transparent;
     color: black;
     font-weight:300 ;
+   
 
 
 }
 
 .eventContainer>a {
     text-decoration: none;
+}
+.eventsContainer>a {
+    text-decoration: none;
+   
 }

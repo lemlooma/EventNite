@@ -11,7 +11,8 @@ module.exports = {
        time: 'Sat, July 23, 9:00 PM',
        detail: 'You got a mouth we got a mic! Stage is open to all, just be nice. Also a plus if you actually have talent!',
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
       {
@@ -21,7 +22,8 @@ module.exports = {
        time: 'Wed, Jul 21, 6:00 PM',
        detail: "Bryant Park Yoga returns for a 10-week summer series beginning June 16! Our socially distanced classes will ensure that yogi's who join in-person feel comfortable and safe. To comply with state guidelines all yogi's must pre-register to attend a class. We are not able to accept walk-ins this summer as we are closely monitoring event capacity. Participants will be asked to bring their own mat this summer to help our sanitation efforts.",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
       {
@@ -31,7 +33,8 @@ module.exports = {
        time: 'Wed, Jul 21, 6:00 PM',
        detail: "Now is the perfect time to get your mental and phsyical health in order. We continue to bring you opportunities to connect and learn something new until we get back to full time in-person events.There are many home health remedies available to us that are simple to make or take at home that can truly build vitality or even lessen the severity of an illness. Many of these are recipes passed down from our grandmothers and have been used for hundreds of years. Even though many of these health remedies are folk medicine, their effectiveness has been backed up by science. In this workshop, you will learn remedies essential for health and to have on hand for several common situations including nausea, cough, sore throat, burns, infections, digestive issues, insomnia, fever, bites/stings, rashes, bruises and joint issues just to name a few. Many of these health remedies are quite simple.",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
         {
        name: 'NYC Comedy Show!',
@@ -40,7 +43,8 @@ module.exports = {
        time: 'Tue, Sep 15, 7:45 PM',
        detail: "One of the best shows in LES features comedians from Conan, Late Night, Comedy Central and much more!Our headliner of the evening is a MA native and has been killing it all across the country, you've seen him on Conan, Comedy Central, and multiple festivals, it's the incredible Orlando Baxter!",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
        {
@@ -50,7 +54,8 @@ module.exports = {
        time: 'Sun, Dec 1, 9:45 PM',
        detail: "Even though we are spending more time at home than 'normal', that doesnt mean we still can't dance every once in a while! With this masterclass we continue our series on keeping you active during these challenging times.Have you always wanted to learn how to house dance but the steps just seemed too difficult? Do you never know how to start? This course is designed to not only teach you the foundation of house dancing but also to show how to unleash your inner creativity",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
            {
@@ -60,7 +65,8 @@ module.exports = {
        time: 'Wed, Aug  26, 10:00 PM',
        detail: "No matter where you live, you can find a spot to enjoy the final frontier, sky and space! Take a tour of the most mysterious and beautiful phenomena of Earth's sky with this course packed with stunning images from telescopes and detailed animations.",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
        {
@@ -70,7 +76,8 @@ module.exports = {
        time: 'Thu, August 12, 6:30',
        detail: "Whether you are an entrepreneur, small business owner or business professional, this event is the perfect opportunity to get away from your desk, have some cocktails and network with potential business partners, investors, industry professionals and new clients.... Or just come on out and make some new friends! We've witnessed countless business connections and friendships form at our past events.",
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
 
        {
@@ -80,7 +87,8 @@ module.exports = {
        time: 'Thu, Jul 22, 7:00 PM ',
        detail: 'The time has come for Shaazaam Productions to vibe in NYC by popular demand !Located at the popular Gems Lounge and Bar in Brooklyn NYC, we present to you all the "Good Vibez Only" series. A New York based series bringing the Shaazaam Prod effect to our New York and New Jersey crowd ! Everything you need for a great time and much more ! SO RSVP and lets enjoy this Summer !',
        ticketCost: '0.00',
-       categoryId: 1
+       categoryId: 1,
+       userId: 1,
      },
      
 
@@ -91,7 +99,9 @@ module.exports = {
        time: 'Fri, Aug 13, 7:00 PM',
        detail: 'Join us aboard the Jewels Yacht NYC For the next hours, you and your friends will enjoy an incredible live, well-stocked cash bars, and beautiful views of the Manhattan skyline.Come ready to party & have wonderful experience on the nyc yacht party cruise. But get your tickets soon because this event is going to sell out fast.',
        ticketCost: '70.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
+
      },
       {
        name: 'AfroHouse / Afro Dance',
@@ -100,7 +110,8 @@ module.exports = {
        time: 'Thu, Jul 22, 8:00 PM',
        detail: '"AFRO DANCE STYLES / AFROBEATS with Meka" brings you the hottest AFRO dance moves from all over Africa filled with fun, energy, passion and lots of laughs.​ All level dancers are welcome!',
        ticketCost: '35.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
       {
        name: 'Flicks & Vibes',
@@ -109,7 +120,8 @@ module.exports = {
        time: 'Mon, July 22, 12:00 AM',
        detail: 'Introducing the new BLACK outdoor movie night experience. Showing films starring black actors every other Friday in our outdoor garden.',
        ticketCost: '15.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
      {
        name: 'A Drinking Game Space Jam',
@@ -118,7 +130,8 @@ module.exports = {
        time: 'Fri, Jul 23, 8:00 PM',
        detail: "What's 'A Drinking Game'? Well, take your favorite 80s or 90s flick, mix in a live staged reading, add a dash of your favorite beverage, and you've got one hell of a cocktailEach movie comes with a list of buzzwords and phrases–when you hear one, a bell rings and everybody drinks! The actors are in on the fun, too. Plus, when someone says a name, the actor playing that character has to drink. So as the evening progresses, the show's bound to get a little wacky.",
        ticketCost: '18.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
       {
        name: "Stella Blue's Band",
@@ -127,7 +140,8 @@ module.exports = {
        time: 'Sat, Jul 24, 7:00 PM',
        detail: "Live from Court 4, The Tennis Club of Hastings presents an evening with Stella Blue's Band! Backdropped by the magnificent cliffs of the Palisades and Hudson River, Stella Blue's Band, the country's premier Grateful Dead tribute act will bring the magic of the Dead to the tennis courts of Hastings. This show will be one to remember!",
        ticketCost: '25.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
       {
        name: "Sound Healing Performances ",
@@ -136,7 +150,8 @@ module.exports = {
        time: 'Sun, Jul 25, 2:00 PM',
        detail: "Join us for an afternoon of sound-based meditation and experimental music performance presented in conjunction with artist Asif Mian’s exhibition RAF: Prosthetic Location.Prosthetic Location is the newest iteration of Mian’s multi-chapter project RAF that investigates how ritual, behavior, and memory are impacted by violence and its perception. The narrative in Prosthetic Location surrounds an unsolved trauma from the artist's own life, not as a linear or static occurrence, but rather a continuum of interpretations, reenactments, and reverberations. For Mian, producing the work is a form of investigative therapy for processing the events and forces that haunt him. Like artmaking, meditation has served an essential and grounding role in Mian’s healing process, often woven into his interdisciplinary practice through a ruminating and introspective approach to sculptural materials as well as incorporation of humming and vibratory sound.",
        ticketCost: '30.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
        {
        name: "BEETHOVEN FEST! 1808 REDUX",
@@ -145,7 +160,8 @@ module.exports = {
        time: 'Fri, Feb 25, 6:30 PM',
        detail: "A major two-concert event re-creating the, “most remarkable evening in classical music” – Beethoven’s infamous concert of 1808. Symphony No. 5,Fantasia, Op.77,Sanctus from Mass in C,Featuring Rockland Symphony & Friends, Ah! Perfido",
        ticketCost: '65.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
        {
        name: "Ballet Nepantla 3rd Annula Gala",
@@ -154,7 +170,8 @@ module.exports = {
        time: 'Fri, Oct 15, 7:00 PM',
        detail: "Choreography: Chiara Ajkun after Marius Petipa & Lev Ivanov. Music: Pyotr Ilych Tchaikovsky. Join Ballet Nepantla for their Día De Los Muertos themed, 3rd annual gala!Don't miss this magical Día De Los Muertos themed event October 15, 2021! The evening will include Ballet Nepantla performances, silent auction, dinner, dancing, live music, and OPEN BAR! This is a night not to be missed!!! Get your tickets today",
        ticketCost: '45.00',
-       categoryId: 2
+       categoryId: 2,
+       userId: 1,
      },
      {
        name: "The Secret Eats ",
@@ -163,7 +180,8 @@ module.exports = {
        time: 'Sun, Aug 1, 6:30 PM',
        detail: "While Chinatown might seem touristy these days, it's still hiding some of the best bites in NYC...if you know where to look. Get ready to experience a food crawl that will lead you to the neighborhood's best-kept secrets (if you can keep it hush-hush).Join New York Adventure Club as we journey through the twisted back streets of present-day Chinatown to eat at some of the neighborhood’s best culinary destinations, while learning about the highs and lows it has endured over the past several generations. Come hungry!",
        ticketCost: '50.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
       {
        name: "Williamsburg Bite Nites ",
@@ -172,7 +190,8 @@ module.exports = {
        time: 'Tues, Aug 2, 8:45 PM',
        detail: "Williamsburg, one of Brooklyn’s most desirable neighborhoods, straddles old and new. You can enjoy the lively arts, music, and boutique scene here, chill in numerous cafes, dine in some very good restaurants — and soak up the unique vibe.During this gastro experience, discover the cultural delights and delectable bites of Brooklyn, by the hand of local food experts. Delve into the rich culinary history of the area as you visit iconic institutions to sample tasty treats.",
        ticketCost: '56.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
       {
        name: "Natural Dyeing Food Scraps Workshop",
@@ -181,7 +200,8 @@ module.exports = {
        time: 'Thu, Jul 22, 6:00 PM',
        detail: "Not your average natural dye workshop! Join us for a hands-on workshop and learn how your food scraps can be used to create color and dye fabric before they end up in a compost pile. Beyond the basics of dyeing, we'll also discuss food waste, waste reduction and how you can compost in NYC. Participants will learn how to extract color from food waste and leave with their very own natural dyed handkerchief.Materials including small fabric swatches, and natural dyes will be provided. You may wish to bring some more fabrics to test along with you. If you have any natural dyes you wish to try feel free to bring these on the day.",
        ticketCost: '32.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
 
       {
@@ -191,7 +211,8 @@ module.exports = {
        time: 'All Night ',
        detail: "New York City is the ultimate melting pot of cuisines and cultures. There are food tours focusing on taking tourists and locals to taste a wide variety of foods but what about the drinks? New York Food Tours features the Original and FIRST Multicultural Bar Hopping Tour. This is not a tour that can be found anywhere else in the world! We leverage the unique cultural mix of NYC and our knowledge of local food- and drinks-lovers to tailor this diverse and authentic multicultural drinking tour. Through bar hopping, you will learn about the history, culture, and development of each ethnic wine or beer, and more importantly, experience and taste the delicious drinks! Moreover, you will explore one of the oldest and most diverse neighborhoods in NYC while having the most memorable, exotic, and pleasant happy hour!",
        ticketCost: '150.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
       {
        name: "Drink & Munch & Paint ",
@@ -200,7 +221,8 @@ module.exports = {
        time: 'Mon, Jul 26, 7:00 PM',
        detail: "Join us for for two hours of live figure drawing/painting, with two models! All skill levels welcome. We provide drawing supplies and wine. Or, you can bring your favorite art-making tools and/or BYOB. Just don't eat your paint.",
        ticketCost: '20.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
       {
        name: "Yard Beats & Eats",
@@ -209,7 +231,8 @@ module.exports = {
        time: 'Thu, Jul 22, 5:00 PM ',
        detail: "Listen to live music or DJs spinning the summers perfect set while enjoying food and drink made by businesses that call the Yard home. Activities such as book giveaways for kids, fashion pop-ups, and artist-led discussions will be added to the roster to complement the great tastes and sounds..... stay tuned for more!",
        ticketCost: '30.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
       {
        name: "Freakiest & Funniest Food Tour™ ",
@@ -218,7 +241,8 @@ module.exports = {
        time: 'Sat, Jul 24, 7:00 PM',
        detail: "Are you ready for an exotic, adventurous, extreme, and yet delicious, and fun food tour? You are going to explore a wide variety of foods that you have never thought of tasting before. Some of you may have never even heard of these foods! They are, however, the favorite foods of millions of people worldwide. Aren’t you curious about why others love these foods so much? Is it because of their taste or nutritional benefits? Are you daring enough to explore them yourself?  Do you want to see your friends, family, or fellow tourists’ funky facial expressions as they try new exotic foods? Furthermore, we are going to have a chicken foot eating competition! This freaky tour is not only about food tastings but also about having a hilarious time with your friends, family, and/or fellow tourists. Come join us today for an adventurous food tour for only $75. All tastings are included.",
        ticketCost: '50.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
 
      {
@@ -228,7 +252,8 @@ module.exports = {
        time: 'Sat, Jul 24, 7:00 PM',
        detail: "Are you tired of working? Had a bad day? Hate your boss? You need a drink mate. Come get wasted after work with us at Taj. We will call your uber home and talk bad about your boss with you. Open till 5AM. Muisc | Food | Drinks ",
        ticketCost: '50.00',
-       categoryId: 3
+       categoryId: 3,
+       userId: 1,
      },
 
     ], {});

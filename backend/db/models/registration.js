@@ -1,27 +1,39 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Registration = sequelize.define('Registration', {
-     eventId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: { model: 'Events' },
+  const Registration = sequelize.define(
+    "Registration",
+    {
+      eventId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: { model: "Events" },
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: { model: "Users" },
+      },
+      ticketNum: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: { model: 'Users' },
-    },
-    ticketNum: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-  }, {});
-  Registration.associate = function(models) {
+    {}
+  );
+  Registration.associate = function (models) {
     // associations can be defined here
-    Registration.belongsTo(models.Event, { foreignKey: 'eventId'});
+    Registration.belongsTo(
+      models.Event,
+      { foreignKey: "eventId" },
+      { onDelete: "CASCADE" }
+    );
 
     // 1:Many User <> Registrations, one user can have many registrations
-    Registration.belongsTo(models.User, { foreignKey: 'userId'});
+    Registration.belongsTo(
+      models.User,
+      { foreignKey: "userId" },
+      { onDelete: "CASCADE" }
+    );
   };
   return Registration;
 };

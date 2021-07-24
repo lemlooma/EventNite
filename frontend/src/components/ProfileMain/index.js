@@ -7,39 +7,51 @@ import { csrfFetch } from "../../store/csrf";
 import { Link, useParams } from "react-router-dom";
 
 function ProfileMain() {
+  const [bookmarks, setBookmarks] = useState([]);
+  const [registrations, setRegistrations] = useState([]);
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const sessionUserId = useSelector((state) => state.session.user?.id);
-  const userEvents = sessionUser?.Bookmarks?.map((b) => b.eventId);
-  const [event, setEvent] = useState([]);
-  const [bookmark, setBookmark] = useState({});
+
+  const userBookmarkEvents = sessionUser?.Bookmarks?.map((b) => b.eventId);
+  const userRegisteredEvents = sessionUser?.Registrations?.map(
+    (b) => b.eventId
+  );
+  // const [event, setEvent] = useState([]);
+  // const [bookmark, setBookmark] = useState({});
+
+  console.log({ userRegisteredEvents, userBookmarkEvents, sessionUser });
 
   const { id } = useParams();
 
-  const [events, setEvents] = useState([]);
   useEffect(() => {
     (async function () {
-      const res = await csrfFetch("/api/events");
+      const res = await csrfFetch("/api/users/events");
+
       if (res.ok) {
-        const newEvents = await res.json();
-        const bookmarked = newEvents.filter((e) => userEvents.includes(e.id));
-        setEvents(bookmarked);
+        const events = await res.json();
+
+        const bookmarked = events?.bookmarkedEvents;
+        setBookmarks(bookmarked);
+
+        const registered = events?.registeredEvents;
+        setRegistrations(registered);
       }
     })();
   }, []);
 
-  useEffect(() => {
-    (async function () {
-      const res = await csrfFetch(`/api/events/${id}`);
-      if (res.ok) {
-        const newEvent = await res.json();
-        setEvent(newEvent);
-        setBookmark(
-          newEvent?.Bookmarks?.find((fav) => +fav.userId === +sessionUserId)
-        );
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async function () {
+  //     const res = await csrfFetch(`/api/events/${id}`);
+  //     if (res.ok) {
+  //       const newEvent = await res.json();
+  //       setEvent(newEvent);
+  //       setBookmark(
+  //         newEvent?.Bookmarks?.find((fav) => +fav.userId === +sessionUserId)
+  //       );
+  //     }
+  //   })();
+  // }, []);
 
   // const addToBookmark = async () => {
   //   const response = await csrfFetch("/api/bookmark", {
@@ -80,12 +92,28 @@ function ProfileMain() {
                 textDecoration: "underline",
                 marginTop: "40px",
                 paddingLeft: "450px",
-              
               }}
             >
               Bookmarked Events
             </h2>
-            {events?.map((event) => (
+            {bookmarks?.map((event) => (
+              <Link key={event.id} to={`/event/${event.id}`}>
+                <b className="eventName">{event.name}</b>
+                <img className="fitImg" src={event.pic} alt={event.name}></img>
+                <div></div>
+              </Link>
+            ))}
+
+            <h2
+              style={{
+                textDecoration: "underline",
+                marginTop: "40px",
+                paddingLeft: "450px",
+              }}
+            >
+              Registered Events
+            </h2>
+            {registrations?.map((event) => (
               <Link key={event.id} to={`/event/${event.id}`}>
                 <b className="eventName">{event.name}</b>
                 <img className="fitImg" src={event.pic} alt={event.name}></img>

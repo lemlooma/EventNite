@@ -19,7 +19,7 @@ function EventPageHeader({ event }){
           <p className={`min-margin`}>Price: ${event.ticketCost}</p>
         </div>
         <div className='event-register-button'>
-          {/* <RegistrationFormModal event={event}/> */}
+          <RegistrationFormModal event={event}/>
          </div>
       </div>
     </div>

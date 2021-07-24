@@ -1,8 +1,9 @@
 import { csrfFetch } from "./csrf";
 const ADD_ONE = "events/newevent";
 const REMOVE_EVENT = "events/removeEvent";
-// const LOAD_REGISTERED = "events/LOAD_REGISTERED";
-// const REGISTER = "events/REGISTER";
+const LOAD_REGISTERED = "events/LOAD_REGISTERED";
+const REGISTER = "events/REGISTER";
+const UNREGISTER = 'events/UNREGISTER';
 
 const addOne = (payload) => {
   return {
@@ -15,15 +16,19 @@ const removeEvent = () => {
     type: REMOVE_EVENT,
   };
 };
-// const register = (event) => ({
-//   type: REGISTER,
-//   event,
-// });
+const register = (event) => ({
+  type: REGISTER,
+  event,
+});
+const unregister = (eventId) => ({
+  type: UNREGISTER,
+  eventId,
+});
 
-// const loadRegistered = (registered) => ({
-//   type: LOAD_REGISTERED,
-//   registered,
-// });
+const loadRegistered = (registered) => ({
+  type: LOAD_REGISTERED,
+  registered,
+});
 
 
 export const addEvent = (payload) => async (dispatch) => {
@@ -62,47 +67,49 @@ export const deleteEvent = () => async (dispatch) => {
 };
 
 
-// export const registerEvent = (payload) => async (dispatch) => {
-//   const eventId = payload.id;
-//   const ticketNum = parseInt(payload.ticketNum, 10);
+export const registerEvent = (payload) => async (dispatch) => {
+  const eventId = payload.id;
+  const ticketNum = parseInt(payload.ticketNum, 10);
+  console.log("Hellllo worlddddddddd")
 
-//   const response = await csrfFetch(`/api/events/${eventId}/registration`, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ ticketNum }),
-//   });
+  const response = await csrfFetch(`/api/events/registration/${eventId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ticketNum }),
+  });
 
-//   if (response.ok) {
-//     const event = await response.json();
-//     dispatch(register(event));
-//   }
-// };
+  if (response.ok) {
+    const event = await response.json();
+    console.log({event})
+    // dispatch(register(event));
+  }
+};
 
-// export const getRegistered = () => async (dispatch) => {
-//   const response = await fetch(`/api/events/registrations`);
+export const getRegistered = () => async (dispatch) => {
+  const response = await fetch(`/api/events/registrations`);
 
-//   if (response.ok) {
-//     const registered = await response.json();
-//     dispatch(loadRegistered(registered));
-//   }
-// };
-
-
-// export const unregisterEvent = (eventId) => async (dispatch) => {
-//   const response = await csrfFetch(`/api/events/${eventId}/registration`, {
-//     method: "DELETE",
-//   });
-
-//   if (response.ok) {
-//     const unregisteredId = await response.json();
-//     dispatch(unregister(unregisteredId));
-//   }
-// };
+  if (response.ok) {
+    const registered = await response.json();
+    dispatch(loadRegistered(registered));
+  }
+};
 
 
+export const unregisterEvent = (eventId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/events/${eventId}/registration`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    const unregisteredId = await response.json();
+    dispatch(unregister(unregisteredId));
+  }
+};
 
 
-const initialState = { list: []};
+
+
+const initialState = { list: [], registered: [] };
 const eventReducer = (state = initialState, action) => {
   let newState;
 
@@ -121,19 +128,19 @@ const eventReducer = (state = initialState, action) => {
         [action.payload.id]: { ...state[action.payload.id], ...action.payload },
       };
     }
-//     case LOAD_REGISTERED: {
-//       return {
-//         ...state,
-//         registered: action.registered,
-//       };
-//     }
+    case LOAD_REGISTERED: {
+      return {
+        ...state,
+        registered: action.registered,
+      };
+    }
 
-//     case REGISTER: {
-//       newState = { ...state };
-//       const newRegistered = [...newState.registered, action.event];
-//       newState.registered = newRegistered;
-//       return newState;
-    // }
+    case REGISTER: {
+      newState = { ...state };
+      const newRegistered = [...newState.registered, action.event];
+      newState.registered = newRegistered;
+      return newState;
+    }
   };
 }
   

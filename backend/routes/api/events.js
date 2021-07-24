@@ -1,42 +1,22 @@
-const express = require('express');
-const asyncHandler = require('express-async-handler');
-const { check } = require('express-validator');
-const { handleValidationErrors } = require('../../utils/validation');
+const express = require("express");
+const asyncHandler = require("express-async-handler");
+const { check } = require("express-validator");
+const { handleValidationErrors } = require("../../utils/validation");
 
-const { restoreUser, requireAuth } = require('../../utils/auth');
-const { Event, User, Bookmark, Registration} = require('../../db/models');
-const { request } = require('../../app');
-
+const { restoreUser, requireAuth } = require("../../utils/auth");
+const { Event, User, Bookmark, Registration } = require("../../db/models");
+const { request } = require("../../app");
 
 const router = express.Router();
 
-
-router.get('/', asyncHandler(async(req, res, next) => {
+router.get(
+  "/",
+  asyncHandler(async (req, res, next) => {
     const events = await Event.findAll();
-    res.json(events)
+    res.json(events);
     // console.log(events)
-}))
-
-router.get('/:id', asyncHandler(async(req, res, next) => {
-    const event = await Event.findByPk(req.params.id, {include:Bookmark});
-    res.json(event)
-    // console.log("hello",event)
-}))
-
-
-// //load registered events
-router.get('/registrations', restoreUser, asyncHandler( async(req, res) => {
-  const { user } = req
-  const registrations = await Registration.findAll({
-    where: { userId: user.id },
-    include: [Event],
-  });
-  const registeredEvents = registrations.map(register => register.Event);
-  res.json(registeredEvents)
-}))
-
-
-// // Posts
+  })
+);
 
 router.post(
   "/",
@@ -46,19 +26,18 @@ router.post(
   })
 );
 
-// //register 
-router.post('/:id/registration', requireAuth, asyncHandler( async(req, res) => {
-  const { ticketNum } = req.body; 
-  const eventId = req.params.id
-  const userId = req.user.id
+router.get(
+  "/:id",
+  asyncHandler(async (req, res, next) => {
+    const event = await Event.findByPk(req.params.id, {
+      include: [Bookmark, Registration],
+    });
+    res.json(event);
+    // console.log("hello",event)
+  })
+);
 
-  const registered = await Registration.create({ eventId, userId, ticketNum })
-  const event = await Event.findByPk(eventId)
-
-  res.json(event) //add event obj to array of registered events on front end
-}))
-
-
+//edit event
 router.patch(
   "/:id",
   asyncHandler(async function (req, res) {
@@ -76,14 +55,78 @@ router.patch(
     return res.json(newEvent);
   })
 );
-// //bookmark event
-// router.post('/:id/bookmark', requireAuth, asyncHandler( async(req, res) => {
-//   const eventId = req.params.id
-//   const userId = req.user.id
-//   const bookedmarked = await Bookmark.create({ eventId, userId })
-//   const event = await Event.findByPk(eventId)
 
-//   res.json(event) //add event obj to array of bookmarked events on front end
-// }))
+router.delete(
+  "/:id",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const eventId = req.params.id;
+    const userId = req.user.id;
+
+    const event = await Event.findOne({
+      where: { id: eventId, userId },
+    });
+    if(event){
+    await event.destroy();
+    }
+
+    res.sendStatus(200);
+  })
+);
+
+// //load registered events
+
+router.get(
+  "/registrations",
+  restoreUser,
+  asyncHandler(async (req, res) => {
+    const { user } = req;
+    const registrations = await Registration.findAll({
+      where: { userId: user.id },
+      include: [Event],
+    });
+    const registeredEvents = registrations.map((reg) => reg.Event);
+    res.json(registeredEvents);
+  })
+);
+// // Posts
+
+// //register
+router.post(
+  "/registration/:id",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { ticketNum } = req.body;
+    const eventId = req.params.id;
+    const userId = req.user.id;
+
+    const registeration = await Registration.create({
+      eventId,
+      userId,
+      ticketNum,
+    });
+    const event = await Event.findByPk(eventId, {
+      include: [Bookmark, Registration],
+    });
+
+    res.json(event); //add event obj to array of registered events on front end
+  })
+);
+
+router.delete(
+  "/registration/:id",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const eventId = req.params.id;
+    const userId = req.user.id;
+
+    const registration = await Registration.findOne({
+      where: { eventId, userId },
+    });
+    await registration.destroy();
+
+    res.sendStatus(200);
+  })
+);
 
 module.exports = router;

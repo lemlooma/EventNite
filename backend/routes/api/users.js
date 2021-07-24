@@ -2,9 +2,8 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-
+const { Event, User, Bookmark, Registration } = require("../../db/models");
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -43,5 +42,27 @@ router.post(
       });
     }),
   );
+
+
+router.get(
+  "/events",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { user } = req;
+    const registrations = await Registration.findAll({
+      where: { userId: user.id },
+      include: [Event],
+    });
+    const registeredEvents = registrations.map((reg) => reg.Event);
+
+    const bookmarks = await Bookmark.findAll({
+          where: { userId: user.id },
+          include: [Event],
+        });
+        const bookmarkedEvents = bookmarks.map((reg) => reg.Event);
+
+    res.json({ registeredEvents, bookmarkedEvents });
+  })
+);
   
 module.exports = router;

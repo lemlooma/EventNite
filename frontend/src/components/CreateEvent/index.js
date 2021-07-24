@@ -1,6 +1,6 @@
 import Navigation from "../Navigation/index";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { useHistory } from "react-router";
 import { addEvent } from "../../store/events";
@@ -13,7 +13,7 @@ function AddEvent() {
   const [ticketCost, setTicketCost] = useState("");
   const [detail, setDetail] = useState("");
   const [categoryId, setCategoryId] = useState("");
-
+  const sessionUserId = useSelector((state) => state.session.user?.id);
   const dispatch = useDispatch();
   const history = useHistory();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,6 +30,7 @@ function AddEvent() {
       detail,
       ticketCost: +ticketCost,
       categoryId: 1,
+      userId: +sessionUserId,
     };
     console.log(payload);
     let createdEvent = await dispatch(addEvent(payload));
@@ -42,8 +43,7 @@ function AddEvent() {
       <>
         {/* <Navigation isLoaded={isLoaded} />
         {isLoaded} */}
-        <div className="photoContainer">
-        </div>
+        <div className="photoContainer"></div>
         <form onSubmit={handleSubmit} className="inputForm">
           <div className="inputContainer">
             <label>
@@ -108,7 +108,7 @@ function AddEvent() {
                 onChange={(e) => setCategoryId(e.target.value)}
               /> */}
             </label>
-            <button type="submit">Create Event!</button>
+            {sessionUserId && <button type="submit">Create Event!</button>}
           </div>
         </form>
       </>

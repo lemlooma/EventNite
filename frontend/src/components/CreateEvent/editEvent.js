@@ -17,6 +17,7 @@ function EditEvents() {
    const dispatch = useDispatch();
    const history = useHistory();
    const [isLoaded, setIsLoaded] = useState(false);
+
    useEffect(() => {
      dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
    }, [dispatch]);
@@ -35,7 +36,7 @@ function EditEvents() {
      console.log(payload);
      let editedEvent = await dispatch(editEvent(payload));
      if (editedEvent) {
-   
+      
      }
    };
 

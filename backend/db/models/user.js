@@ -1,7 +1,8 @@
-'use strict';
-const bcrypt = require('bcryptjs');
-const { Validator } = require('sequelize');
+"use strict";
+const bcrypt = require("bcryptjs");
+const { Validator } = require("sequelize");
 const { Bookmark } = require("./bookmark");
+// const { Registration } = require("./registration");
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     "User",
@@ -40,85 +41,69 @@ module.exports = (sequelize, DataTypes) => {
       defaultScope: {
         attributes: {
           exclude: ["hashedPassword", "email", "createdAt", "updatedAt"],
-          include: [
-            {
-              model: sequelize.models.Bookmark,
-            },
-          ],
         },
       },
       scopes: {
         currentUser: {
           attributes: { exclude: ["hashedPassword"] },
-          include: [
-            {
-              model: sequelize.models.Bookmark,
-            },
-          ],
         },
         loginUser: {
           attributes: {},
-          include: [
-            {
-              model: sequelize.models.Bookmark,
-            },
-          ],
         },
       },
     }
   );
- User.associate = function(models) {
+  User.associate = function (models) {
     // associations can be defined here
-      // 1:Many, User <> Registrations, one user can have many registration entries
-    User.hasMany(models.Registration, { foreignKey: 'userId'});
+    // 1:Many, User <> Registrations, one user can have many registration entries
+    // User.hasMany(models.Registration, { foreignKey: "userId" });
     User.hasMany(models.Bookmark, { foreignKey: "userId" });
+    User.hasMany(models.Event, { foreignKey: "id" });
 
     // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
     const map = {
-      through: 'Bookmark', // relationship exists 'through' the join table, bookmark
-      otherKey: 'eventId', // key on Event table to reference the join table
-      foreignKey: 'userId', // key on User table to reference the join table
-    }
+      through: "Bookmark", // relationship exists 'through' the join table, bookmark
+      otherKey: "eventId", // key on Event table to reference the join table
+      foreignKey: "userId", // key on User table to reference the join table
+    };
     User.belongsToMany(models.Event, map);
- };
- User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
-  const { id, username, email, Bookmarks } = this; // context will be the User instance
-  // console.log("fdkhjsgfhhdsz")
-  // console.log(this)
-  return { id, username, email, Bookmarks };
-  
-};
-User.prototype.validatePassword = function (password) {
- return bcrypt.compareSync(password, this.hashedPassword.toString());
-};
-User.getCurrentUserById = async function (id) {
- return await User.scope('currentUser').findByPk(id);
-};
-User.login = async function ({ credential, password }) {
-  const { Op } = require('sequelize');
-  const user = await User.scope('loginUser').findOne({
-    where: {
-      [Op.or]: {
-        username: credential,
-        email: credential,
+  };
+  User.prototype.toSafeObject = function () {
+    // remember, this cannot be an arrow function
+    const { id, username, email, Bookmarks } = this; // context will be the User instance
+    // console.log("fdkhjsgfhhdsz")
+    // console.log(this)
+    return { id, username, email, Bookmarks };
+  };
+  User.prototype.validatePassword = function (password) {
+    return bcrypt.compareSync(password, this.hashedPassword.toString());
+  };
+  User.getCurrentUserById = async function (id) {
+    return await User.scope("currentUser").findByPk(id);
+  };
+  User.login = async function ({ credential, password }) {
+    const { Op } = require("sequelize");
+    const user = await User.scope("loginUser").findOne({
+      where: {
+        [Op.or]: {
+          username: credential,
+          email: credential,
+        },
       },
-    },
-  });
-
-  if (user && user.validatePassword(password)) {
-    return await User.scope("currentUser").findByPk(user.id, {
-      include: Bookmark,
     });
-  }
-};
-User.signup = async function ({ username, email, password }) {
-  const hashedPassword = bcrypt.hashSync(password);
-  const user = await User.create({
-    username,
-    email,
-    hashedPassword,
-  });
-  return await User.scope('currentUser').findByPk(user.id);
-};
+
+    if (user && user.validatePassword(password)) {
+      return await User.scope("currentUser").findByPk(user.id);
+    }
+  };
+  User.signup = async function ({ username, email, password }) {
+    const hashedPassword = bcrypt.hashSync(password);
+    const user = await User.create({
+      username,
+      email,
+      hashedPassword,
+    });
+    return await User.scope("currentUser").findByPk(user.id);
+  };
   return User;
 };
