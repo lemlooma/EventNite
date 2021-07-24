@@ -6,7 +6,6 @@ import { useHistory, useParams} from "react-router";
 import { editEvent } from "../../store/events";
 
 function EditEvents({setShowForm}) {
-
    const [name, setName] = useState("");
    const [pic, setPic] = useState("");
    const [time, setTime] = useState("");

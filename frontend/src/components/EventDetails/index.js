@@ -19,7 +19,7 @@ function EventDetails() {
   const [event, setEvent] = useState([]);
   const [bookmark, setBookmark] = useState({});
   const history = useHistory();
-  const[showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -66,9 +66,8 @@ function EventDetails() {
     history.push("/");
   };
 
- 
-function click() {
-  setShowForm(true)
+  function click() {
+    setShowForm(true);
   }
 
   return (
@@ -89,16 +88,17 @@ function click() {
           ) : (
             <button onClick={() => addToBookmark()}>BOOKMARK</button>
           )}
-         
 
-        
           {+sessionUserId === +event.userId && (
             <button onClick={() => deleteEvent()}>Delete</button>
           )}
-           {+sessionUserId === +event.userId? <button onClick={click} > Edit Event</button>:"" }
+          {+sessionUserId === +event.userId ? (
+            <button onClick={click}> Edit Event</button>
+          ) : (
+            ""
+          )}
 
-           {showForm? <EditEvents setShowForm={setShowForm}/> : "" }
-          
+          {showForm ? <EditEvents setShowForm={setShowForm} /> : ""}
         </div>
       </div>
     </div>
