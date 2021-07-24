@@ -1,12 +1,4 @@
-/* :root {
-  --text: #39364F;
-  --background: #ffffff;
-  --shadow: black;
-  --orange: olive;
 
-  --purple: #000000;
-  
-} */
 
 .modal {
   background-color: white ;
@@ -34,15 +26,14 @@
 .modal > input:focus {
   border-bottom-color: whitesmoke;
    border-radius: 3px;
-  border-bottom: 2px solid var(--purple);
+  border-bottom: 3px solid black;
 }
-
 button {
   border: 1px solid white;
-  border-radius: 3px;
+  border-radius: 20px;
   background-color: white;
-  width: 100%;
-  font-weight: 600;
+  width: 50%;
+  font-weight: 550;
   padding: .5em 1em;
  
   transition: background-color 500ms, border 500ms, color 500ms;
@@ -52,6 +43,7 @@ button:hover {
   background-color: black;
   border: 2px solid ;
   color:white;
+  border-radius: 20px;
 
 }
 
@@ -69,7 +61,7 @@ body {
 
 
 /* APP CONTAINER */
-/* .app-grid-container {
+  /* .app-grid-container {
   display: grid;
   grid-template-columns: 1fr 1200px 1fr;
   grid-template-rows: 70px 3fr 70px;
@@ -79,16 +71,14 @@ body {
     '. foot .';
   height: 100vh;
   width: 100vw;
-}  */
+}   */
 
 
 .nav{
-  grid-area: nav;
+  /* grid-area: nav; */
   display: grid;
-  grid-template-columns: 600px 1fr 200px;
+  grid-template-columns: 600px repeat(2,1fr);
   grid-template-rows: 1fr;
-  grid-template-areas:
-    'fixed links';
 }
 
 .body{
@@ -101,7 +91,6 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px 0px 20px 0px;
-
 }
 
 /* NAV BAR */
@@ -113,7 +102,7 @@ body {
 
 /*logo css */
 .eventNite {
-  width: 200px;
+  width: 300px;
   margin-right: 250px;
 }
 
@@ -123,12 +112,13 @@ body {
   border: 1px solid white;
   border-radius: 3px;
   background-color: white;
-  width: 100%;
+  grid-column: 3;
   font-weight: 500;
   padding: .5em 1em;
+
   transition: background-color 500ms, border 500ms, color 500ms;
   white-space: nowrap;
-  
+
 }
 /* profile /logout links */
 .nav-link:hover{
@@ -141,8 +131,16 @@ body {
   display: flex;
   flex-direction: flex-end;
   align-items: center;
+
+  width: 300px;
+  grid-column: 3;
+  margin-right: 20px;
+
+  /* justify-self: end; */
   
 } 
+
+
 
 
 
@@ -200,5 +198,7 @@ body {
   width: 100%;
   max-height: 100%;
 }
+
+
 
 

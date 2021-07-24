@@ -2,42 +2,45 @@ import Navigation from "../Navigation/index";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { useHistory } from "react-router";
-import { addEvent } from "../../store/events";
-import css from "./CreateEvent.css";
-function AddEvent() {
-  const [name, setName] = useState("");
-  const [pic, setPic] = useState("");
-  const [time, setTime] = useState("");
-  const [location, setLocation] = useState("");
-  const [ticketCost, setTicketCost] = useState("");
-  const [detail, setDetail] = useState("");
-  const [categoryId, setCategoryId] = useState("");
+import { useHistory, useParams} from "react-router";
+import { editEvent } from "../../store/events";
 
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-  }, [dispatch]);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const payload = {
-      name,
-      pic,
-      time,
-      location,
-      detail,
-      ticketCost: +ticketCost,
-      categoryId: 1,
-    };
-    console.log(payload);
-    let createdEvent = await dispatch(addEvent(payload));
-    if (createdEvent) {
-      history.push("/");
-    }
-  };
-  return (
+function EditEvents() {
+   const [name, setName] = useState("");
+   const [pic, setPic] = useState("");
+   const [time, setTime] = useState("");
+   const [location, setLocation] = useState("");
+   const [ticketCost, setTicketCost] = useState("");
+   const [detail, setDetail] = useState("");
+   const [categoryId, setCategoryId] = useState("");
+   const { id } = useParams();
+   const dispatch = useDispatch();
+   const history = useHistory();
+   const [isLoaded, setIsLoaded] = useState(false);
+   useEffect(() => {
+     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+   }, [dispatch]);
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     const payload = {
+      id,
+       name,
+       pic,
+       time,
+       location,
+       detail,
+       ticketCost: +ticketCost,
+       categoryId: 1,
+     };
+     console.log(payload);
+     let editedEvent = await dispatch(editEvent(payload));
+     if (editedEvent) {
+   
+     }
+   };
+
+
+return (
     isLoaded && (
       <>
         {/* <Navigation isLoaded={isLoaded} />
@@ -108,11 +111,11 @@ function AddEvent() {
                 onChange={(e) => setCategoryId(e.target.value)}
               /> */}
             </label>
-            <button type="submit">Create Event!</button>
+            <button type="submit">Edit Event</button>
           </div>
         </form>
       </>
     )
   );
 }
-export default AddEvent;
+export default EditEvents;

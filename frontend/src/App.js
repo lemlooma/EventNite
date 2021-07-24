@@ -9,6 +9,7 @@ import CreateEvent from "./components/CreateEvent"
 import Navigation from "./components/Navigation";
 import ProfileMain from "./components/ProfileMain";
 
+
 import './index.css';
 import * as sessionActions from "./store/session";
 
@@ -39,7 +40,7 @@ function App() {
           <Route path="/event/:id" component={EventDetails} />
           <Route path="/newevent" component={CreateEvent}>
             <div>
-  
+              <Navigation isLoaded={isLoaded} />
               <CreateEvent />
               <Footer />
             </div>

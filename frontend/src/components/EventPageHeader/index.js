@@ -11,7 +11,7 @@ function EventPageHeader({ event }){
       </div>
       <div className={`event-header-details`}>
         <div>
-          <h2 style={{textDecoration: 'underline', textTransform: 'capitalize'}}>{event.name}</h2>
+          <h2 style={{ textTransform: 'capitalize'}}>{event.name}</h2>
           <p>Location: {event.location}</p>
         </div>
         <div>
@@ -19,7 +19,7 @@ function EventPageHeader({ event }){
           <p className={`min-margin`}>Price: ${event.ticketCost}</p>
         </div>
         <div className='event-register-button'>
-          <RegistrationFormModal event={event}/>
+          {/* <RegistrationFormModal event={event}/> */}
          </div>
       </div>
     </div>

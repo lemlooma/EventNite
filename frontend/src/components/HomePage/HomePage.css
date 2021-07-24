@@ -1,5 +1,8 @@
 
-
+#blah{
+    margin: 0;
+    padding: 0;
+}
 .photo {
     /* visibility: hidden; */
    display: block;
@@ -10,29 +13,51 @@
 .fitImg {
     width: 400px;
     height: 300px;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
     display: block;
-    margin: auto;
+    /* margin: auto; */
     object-fit: cover;
     border-radius: 30px;
     padding: 20px;
+     /* transition: box-shadow .5s; */
+    /* box-shadow: 1px 1px 10px 1px grey;  */
+;
 }
+/* 
+#overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+} */
 
-.eventsContainer {
+.eventContainer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
     position: relative;
-    right: -65px;
+    justify-content: center;
+    /* right: -65px; */
     text-align: center;
-    top: 40px
+    top: 30px;
+    border-radius: 1px;
 }
 
 .eventName {
     text-decoration: none;
-    color: black
+    text-decoration-color: transparent;
+    color: black;
+    font-weight:300 ;
+
+
+}
+
+.eventContainer>a {
+    text-decoration: none;
 }

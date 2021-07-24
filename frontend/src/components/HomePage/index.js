@@ -27,19 +27,18 @@ function HomePage() {
   
   return (
     isLoaded && (
-      <>
+        <div id="blah">
         <Navigation isLoaded={isLoaded} />
         {isLoaded}
-        {/* <h1>Browse Events</h1> */}
-        <div className="eventsContainer">
+        <div className="eventContainer">
           {events?.map((event) => (
             <Link to={`/event/${event.id}`}>
               <b className="eventName">{event.name}</b>
-              <img className="fitImg" src={event.pic} alt={event.name}></img>
+              <img className="fitImg"  src={event.pic} alt={event.name}></img>
             </Link>
           ))}
         </div>
-      </>
+      </div>
     )
   );
 }
