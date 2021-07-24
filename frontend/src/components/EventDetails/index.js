@@ -19,7 +19,7 @@ function EventDetails() {
   const [event, setEvent] = useState([]);
   const [bookmark, setBookmark] = useState({});
   const history = useHistory();
-
+  const[showForm, setShowForm] = useState(false)
   const { id } = useParams();
 
   useEffect(() => {
@@ -66,13 +66,10 @@ function EventDetails() {
     history.push("/");
   };
 
-  console.log(event);
-
-  // console.log({ sessionUserId, event, x: event?.Bookmarks, bookmark });
-  //   const [isLoaded, setIsLoaded] = useState(false);
-  //   useEffect(() => {
-  //     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-  //   }, [dispatch]);
+ 
+function click() {
+  setShowForm(true)
+  }
 
   return (
     <div>
@@ -92,13 +89,16 @@ function EventDetails() {
           ) : (
             <button onClick={() => addToBookmark()}>BOOKMARK</button>
           )}
-          {/* const sessionUser = useSelector(state => state.session.user); const
-          userId = sessionUser?.id */}
-          <button>Edit Event</button>
-          {+sessionUserId === +event.userId && <EditEvents />}
+         
+
+        
           {+sessionUserId === +event.userId && (
             <button onClick={() => deleteEvent()}>Delete</button>
           )}
+           {+sessionUserId === +event.userId? <button onClick={click} > Edit Event</button>:"" }
+
+           {showForm? <EditEvents setShowForm={setShowForm}/> : "" }
+          
         </div>
       </div>
     </div>

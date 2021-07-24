@@ -5,7 +5,8 @@ import * as sessionActions from "../../store/session";
 import { useHistory, useParams} from "react-router";
 import { editEvent } from "../../store/events";
 
-function EditEvents() {
+function EditEvents({setShowForm}) {
+
    const [name, setName] = useState("");
    const [pic, setPic] = useState("");
    const [time, setTime] = useState("");
@@ -36,9 +37,10 @@ function EditEvents() {
      console.log(payload);
      let editedEvent = await dispatch(editEvent(payload));
      if (editedEvent) {
-      
+      setShowForm(false)
      }
    };
+ 
 
 
 return (
@@ -112,7 +114,7 @@ return (
                 onChange={(e) => setCategoryId(e.target.value)}
               /> */}
             </label>
-            <button type="submit">Edit Event</button>
+            <button  type="submit">Edit Event</button>
           </div>
         </form>
       </>
