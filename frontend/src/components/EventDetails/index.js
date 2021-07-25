@@ -73,35 +73,45 @@ function EventDetails() {
   return (
     <div>
       <Navigation />
-      <div className="everything">
-        <EventPageHeader event={event} />
-        <h2
-          className="min-margin"
-          style={{ textDecoration: "none", color: "orange" }}
-        ></h2>
-        <div className="event-body-container">
-          <p style={{ textAlign: "justify" }}>{event.detail}</p>
 
-          <div></div>
+      <EventPageHeader event={event} />
+      <h2 className="bodytitle"> Event Details </h2>
+      <div className="event-body-container">
+        <p
+          style={{
+            textAlign: "justify",
+            display: "flex",
+            alignItems: "center",
+            width: "60%",
+            margin: "auto",
+            paddingBottom: "20px",
+            lineHeight: "2",
+          }}
+        >
+          {event.detail}
+        </p>
+        <div className="butts">
           {bookmark && bookmark.eventId ? (
-            <button onClick={() => unbookmark()}>UNBOOKMARK</button>
+            <button onClick={() => unbookmark()}>Unbookmark</button>
           ) : (
-            <button onClick={() => addToBookmark()}>BOOKMARK</button>
+            <button onClick={() => addToBookmark()}>Bookmark</button>
           )}
 
           {+sessionUserId === +event.userId && (
-            <button onClick={() => deleteEvent()}>Delete</button>
+            <button onClick={() => deleteEvent()}>Delete Event</button>
           )}
+
           {+sessionUserId === +event.userId ? (
             <button onClick={click}> Edit Event</button>
           ) : (
             ""
           )}
-
-          {showForm ? <EditEvents setShowForm={setShowForm} /> : ""}
         </div>
+        {showForm ? <EditEvents setShowForm={setShowForm} /> : ""}
       </div>
+       
     </div>
+  
   );
 }
 export default EventDetails;

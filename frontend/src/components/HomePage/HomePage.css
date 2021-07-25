@@ -1,8 +1,5 @@
 
-#blah{
-    margin: 0;
-    padding: 0;
-}
+
 .photo {
     /* visibility: hidden; */
    display: block;
@@ -10,7 +7,7 @@
    border-radius: 3px;
 }
 
-.fitImg {
+.eventImg {
     width: 400px;
     height: 300px;
     display: block;
@@ -20,7 +17,7 @@
    
     
 }
-.fitImg:hover {
+.eventImg:hover {
     -webkit-transform: rotate(15deg) scale(1.4);
 	transform: rotate(0deg) scale(1.1);
 	-webkit-transition: .3s ease-in-out;

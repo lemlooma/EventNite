@@ -32,7 +32,7 @@
   /* margin-top: 100px; */
   text-align: center;
   /* background-color: black; */
-  background-image: linear-gradient(315deg, #fafafa 0%, #ffffff 74%);
+  background-image: linear-gradient(315deg, #ffff 100%, #ffffff 100%);
 }
 .input {
    background-color: #eee;

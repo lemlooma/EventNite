@@ -32,10 +32,9 @@ button {
   border: 1px solid white;
   border-radius: 20px;
   background-color: white;
-  width: 50%;
+  width: 60%;
   font-weight: 550;
   padding: .5em 1em;
- 
   transition: background-color 500ms, border 500ms, color 500ms;
 }
 
@@ -198,7 +197,5 @@ body {
   width: 100%;
   max-height: 100%;
 }
-
-
 
 

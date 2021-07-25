@@ -18,6 +18,7 @@
 .event-image-container {
   object-fit: cover;
   width: 100%;
+  padding-top: 15px;
 }
 
 .event-image {
@@ -25,19 +26,20 @@
   width: 50%;
   max-height: 100%;
   position: relative;
-  left: 300px;
+  left: 285px;
  
 }
 
 .event-header-details{
   position:relative ;
-  right: 300px;
+  right: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
   padding: 20px 10px 20px 40px;
-
+padding-top: 15px;
+border:2px dotted;
 }
 
 .event-register-button {
@@ -48,30 +50,29 @@
 /* EVENT PAGE BOTTOM */
 
  .event-body-container{
-  display: grid;
+  /* display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 1fr;
   grid-template-areas:
-  'summary .';
+  'summary .'; */
+
   height: 100%;
   width: 100%;
-  position: relative;
-  left: 300px;
+ 
 } 
 
-/* .event-summary{
-  padding: 0px 20px 10px 20px;
-  color: red;
-} */
-/* 
-.everything {
-  justify-content: center;
-  align-items: center;
-  display: block;
-  margin: auto;
-} */
 
-/* .min-margin{
-  position: relative;
-  left: 300px;
-}  */
+.butts{
+  width: 60%;
+  margin:auto;
+  padding-bottom: 20px;
+}
+
+.bodytitle{
+  width: 60%;
+  margin: auto;
+  text-decoration: underline;
+padding-bottom: 15px;
+padding-top: 15px;
+font-weight:unset;
+}

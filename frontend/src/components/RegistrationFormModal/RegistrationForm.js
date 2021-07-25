@@ -36,7 +36,7 @@ function RegistrationForm({ event }) {
   let orderSummary = `Order Total: (${ticketNum}) x ${+event.ticketCost} = $${totalCost}`;
   const successMessage = `Alright! You're signed up!`;
   const closeWindow = `You may now click outside this window to close.`;
-  const registerMessage = registered ? `I NEEDS more tickets!` : "Register";
+  const registerMessage =  "Register";
 
   return (
     <>

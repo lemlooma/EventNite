@@ -99,7 +99,7 @@ function ProfileMain() {
             {bookmarks?.map((event) => (
               <Link key={event.id} to={`/event/${event.id}`}>
                 <b className="eventName">{event.name}</b>
-                <img className="fitImg" src={event.pic} alt={event.name}></img>
+                <img className="eventImg" src={event.pic} alt={event.name}></img>
                 <div></div>
               </Link>
             ))}
@@ -116,7 +116,7 @@ function ProfileMain() {
             {registrations?.map((event) => (
               <Link key={event.id} to={`/event/${event.id}`}>
                 <b className="eventName">{event.name}</b>
-                <img className="fitImg" src={event.pic} alt={event.name}></img>
+                <img className="eventImg" src={event.pic} alt={event.name}></img>
                 <div></div>
               </Link>
             ))}
