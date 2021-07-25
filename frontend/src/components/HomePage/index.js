@@ -19,7 +19,7 @@ function HomePage() {
       }
     })();
   }, []);
-  console.log("events!!", events);
+  // console.log("events!!", events);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));

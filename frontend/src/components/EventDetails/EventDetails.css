@@ -23,12 +23,12 @@
   width: 50%;
   max-height: 110%;
   position: relative;
-  left: 355px;
+  left: 250px;
   border-radius: 6px;
 }
 .event-header-details {
   position: relative;
-  right: 360px;
+  right: 265px;
   top: 20px;
 
   display: flex;
@@ -45,7 +45,6 @@
 }
 /* EVENT PAGE BOTTOM */
 .event-body-container {
-
   height: 100%;
   width: 100%;
 }

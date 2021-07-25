@@ -71,6 +71,7 @@ function EventDetails() {
   }
 
   return (
+    
     <div>
       <Navigation />
 
@@ -96,6 +97,7 @@ function EventDetails() {
           {event.detail}
         </p>
         <div className="butts">
+          <div></div>
           {bookmark && bookmark.eventId ? (
             <button onClick={() => unbookmark()}>Unbookmark</button>
           ) : (

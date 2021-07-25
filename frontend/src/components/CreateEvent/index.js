@@ -41,8 +41,7 @@ function AddEvent() {
   return (
     isLoaded && (
       <>
-        {/* <Navigation isLoaded={isLoaded} />
-        {isLoaded} */}
+  
         <div className="photoContainer"></div>
         <form onSubmit={handleSubmit} className="inputForm">
           <div className="inputContainer">
