@@ -86,6 +86,11 @@ function EventDetails() {
             margin: "auto",
             paddingBottom: "20px",
             lineHeight: "2",
+            border: "3px dotted",
+            paddingTop: "15px",
+            paddingBottom: "20px",
+            paddingRight: "20px",
+            paddingLeft: "20px",
           }}
         >
           {event.detail}
@@ -109,9 +114,7 @@ function EventDetails() {
         </div>
         {showForm ? <EditEvents setShowForm={setShowForm} /> : ""}
       </div>
-       
     </div>
-  
   );
 }
 export default EventDetails;

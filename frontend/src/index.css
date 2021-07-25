@@ -76,7 +76,7 @@ body {
 .nav{
   /* grid-area: nav; */
   display: grid;
-  grid-template-columns: 600px repeat(2,1fr);
+  grid-template-columns: 1000px repeat(2,1fr);
   grid-template-rows: 1fr;
 }
 
@@ -86,10 +86,10 @@ body {
 }
 
 .footer{
-  grid-area: foot;
+  /* grid-area: foot; */
   display: flex;
   justify-content: center;
-  padding: 20px 0px 20px 0px;
+  padding: 40px 0px 20px 0px;
 }
 
 /* NAV BAR */
@@ -102,7 +102,7 @@ body {
 /*logo css */
 .eventNite {
   width: 300px;
-  margin-right: 250px;
+  margin-right: 600px;
 }
 
 .nav-link {
