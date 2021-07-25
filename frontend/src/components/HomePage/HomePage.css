@@ -1,5 +1,7 @@
 
-
+#blah{
+     background-image: linear-gradient(315deg, #ffff 100%, #ffffff 100%);
+}
 .photo {
     /* visibility: hidden; */
    display: block;

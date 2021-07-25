@@ -40,41 +40,7 @@ function ProfileMain() {
     })();
   }, []);
 
-  // useEffect(() => {
-  //   (async function () {
-  //     const res = await csrfFetch(`/api/events/${id}`);
-  //     if (res.ok) {
-  //       const newEvent = await res.json();
-  //       setEvent(newEvent);
-  //       setBookmark(
-  //         newEvent?.Bookmarks?.find((fav) => +fav.userId === +sessionUserId)
-  //       );
-  //     }
-  //   })();
-  // }, []);
-
-  // const addToBookmark = async () => {
-  //   const response = await csrfFetch("/api/bookmark", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       userId: sessionUserId,
-  //       eventId: id,
-  //     }),
-  //   });
-  //   const data = await response.json();
-  //   setBookmark(data);
-  // };
-
-  // const deleteBookmark = async () => {
-  //   const response = await csrfFetch("/api/bookmark", {
-  //     method: "DELETE",
-  //     body: JSON.stringify({
-  //       userId: sessionUserId,
-  //       eventId: id,
-  //     }),
-  //   });
-  //   setBookmark(null);
-  // };
+ 
 
   return (
     <div className="body">
