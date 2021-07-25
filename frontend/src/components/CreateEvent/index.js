@@ -94,9 +94,10 @@ function AddEvent() {
             <label>
               <label>
                 <input
-                  className="input"
+                  className="details-input"
                   placeholder="Event Details"
                   type="text"
+               
                   value={detail}
                   onChange={(e) => setDetail(e.target.value)}
                 />

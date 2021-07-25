@@ -1,71 +1,59 @@
-
-#blah{
-     background-image: linear-gradient(315deg, #ffff 100%, #ffffff 100%);
+#blah {
+  background-image: linear-gradient(315deg, rgb(255, 255, 255) 100%, #ffffff 100%);
 }
 .photo {
-    /* visibility: hidden; */
-   display: block;
-   margin: auto;
-   border-radius: 3px;
+  /* visibility: hidden; */
+  display: block;
+  margin: auto;
+  border-radius: 3px;
 }
 
 .eventImg {
-    width: 400px;
-    height: 300px;
-    display: block;
-    object-fit: cover;
-    border-radius: 30px;
-    padding: 20px;
-   
-    
+  width: 400px;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+  border-radius: 30px;
+  padding: 20px;
 }
 .eventImg:hover {
-    -webkit-transform: rotate(15deg) scale(1.4);
-	transform: rotate(0deg) scale(1.1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  -webkit-transform: rotate(15deg) scale(1.4);
+  transform: rotate(0deg) scale(1.1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-/* 
-#overlay{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-} */
 
 .eventContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    position: relative;
-    justify-content: center;
-    /* right: -65px; */
-    text-align: center;
-    top: 30px;
-    border-radius: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  justify-content: center;
+  /* right: -65px; */
+  text-align: center;
+  top: 30px;
+  border-radius: 1px;
 }
 
 .eventName {
-    text-decoration: none;
-    text-decoration-color: transparent;
-    color: black;
-    font-weight:300 ;
-   
-
-
+  text-decoration: none;
+  text-decoration-color: transparent;
+  color: black;
+  font-weight: 300;
 }
 
-.eventContainer>a {
-    text-decoration: none;
+.eventContainer > a {
+  text-decoration: none;
 }
-.eventsContainer>a {
-    text-decoration: none;
-   
+.eventsContainer > a {
+  text-decoration: none;
+}
+
+
+
+#imgbanner{
+    width: 100%;
+    height: auto;
+  padding-bottom: 40px;
 }

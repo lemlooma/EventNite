@@ -27,9 +27,14 @@ function HomePage() {
 
   return (
     isLoaded && (
-      <div id="blah">
+      <>
         <Navigation isLoaded={isLoaded} />
         {isLoaded}
+        <img
+          id="imgbanner"
+          alt={"https://i.imgur.com/GJlIVKx.png"}
+          src={`${"https://i.imgur.com/GJlIVKx.png"}`}
+        ></img>
         <div className="eventContainer">
           {events?.map((event) => (
             <Link key={event.id} to={`/event/${event.id}`}>
@@ -38,7 +43,7 @@ function HomePage() {
             </Link>
           ))}
         </div>
-      </div>
+      </>
     )
   );
 }
