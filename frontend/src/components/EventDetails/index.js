@@ -71,7 +71,6 @@ function EventDetails() {
   }
 
   return (
-    
     <div>
       <Navigation />
 
@@ -103,11 +102,9 @@ function EventDetails() {
           ) : (
             <button onClick={() => addToBookmark()}>Bookmark</button>
           )}
-
           {+sessionUserId === +event.userId && (
             <button onClick={() => deleteEvent()}>Delete Event</button>
           )}
-
           {+sessionUserId === +event.userId ? (
             <button onClick={click}> Edit Event</button>
           ) : (

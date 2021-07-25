@@ -41,7 +41,6 @@ function AddEvent() {
   return (
     isLoaded && (
       <>
-  
         <div className="photoContainer"></div>
         <form onSubmit={handleSubmit} className="inputForm">
           <div className="inputContainer">
