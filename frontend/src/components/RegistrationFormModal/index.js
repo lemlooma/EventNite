@@ -34,7 +34,7 @@ function RegistrationFormModal({ event }) {
     <>
       {registerd ? (
         <NavLink className="nav-link" to={"#"} onClick={() => unregister()}>
-          Unregister
+          Cancel Registration
         </NavLink>
       ) : (
         <NavLink

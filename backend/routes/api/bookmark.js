@@ -35,7 +35,7 @@ router.delete(
       where: { eventId: req.body.eventId, userId: req.body.userId },
     });
     if (bookmark) {
-     await bookmark.destroy()
+     await bookmark.destory()
     }
     res.sendStatus(200);
     // console.log(bookmark);
