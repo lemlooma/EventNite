@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { registerEvent } from "../../store/events";
 
-function RegistrationForm({ event }) {
+function RegistrationForm({ event, setEvent }) {
   const dispatch = useDispatch();
   const [ticketNum, setTicketNum] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
   const [registered, setRegistered] = useState(false);
+  const sessionUserId = useSelector((state) => state.session.user?.id);
   const [errors, setErrors] = useState([]);
-
+  // console.log("kghhhhhhhhhhj")
+  // console.log(event)
   // form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
     const payload = { id: event.id, ticketNum };
     return dispatch(registerEvent(payload))
-      .then((res) => {
+      .then(async (res) => {
+        setEvent({
+          ...event,
+          Registrations: [
+            ...event.Registrations,
+            { userId: +sessionUserId, eventId: +event.id, ticketNum },
+          ],
+        });
         setRegistered(true);
       })
       .catch(async (res) => {

@@ -29,15 +29,12 @@
 .event-header-details {
   position: relative;
   right: 265px;
-  
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
   padding: 2px 10px 20px 40px;
-  /*  */
-
+  
 }
 .event-register-button {
   display: flex;

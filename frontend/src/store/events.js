@@ -94,17 +94,17 @@ export const getRegistered = () => async (dispatch) => {
   }
 };
 
-
+// delete reg event
 export const unregisterEvent = (eventId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/events/${eventId}/registration`, {
+  const response = await csrfFetch(`/api/events/registration/${eventId}`, {
     method: "DELETE",
   });
-
-  if (response.ok) {
-    const unregisteredId = await response.json();
-    dispatch(unregister(unregisteredId));
-  }
+  // if (response.ok) {
+  //   const unregisteredId = await response.json();
+  //   dispatch(unregister(unregisteredId));
+  // }
 };
+
 
 
 
