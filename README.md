@@ -15,7 +15,7 @@ Live Link: https://event-nite.herokuapp.com/
 * Hosted on Heroku
 
 
-# Site Walkthrough.\
+# Site Walkthrough
 
 * HomePageconsists of a splash page welcome, all events, and allows users to access login, register, or use a Demo account to check out the app.
 
