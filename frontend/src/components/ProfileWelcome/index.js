@@ -1,6 +1,7 @@
 import React from "react";
 
 function ProfileWelcome({ username, email }) {
+  
   return (
     <>
       <div className={`profile-image-container`}>
