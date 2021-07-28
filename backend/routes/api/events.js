@@ -74,7 +74,7 @@ router.delete(
   })
 );
 
-// //load registered events
+
 
 router.get(
   "/registrations",

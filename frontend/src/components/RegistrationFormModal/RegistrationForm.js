@@ -34,7 +34,7 @@ function RegistrationForm({ event, setEvent }) {
       });
   };
 
-  // dynamically show ticket count and order total
+
   useEffect(() => {
     let price = +event.ticketCost;
     let tickets = ticketNum;
