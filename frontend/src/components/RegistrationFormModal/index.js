@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { Modal } from "../../context/Modal";
 import RegistrationForm from "./RegistrationForm";
-import { registerEvent, unregisterEvent } from "../../store/events";
+import {  unregisterEvent } from "../../store/events";
 import { useSelector, useDispatch } from "react-redux";
 
 function RegistrationFormModal({ event }) {

@@ -1,10 +1,10 @@
-import Navigation from "../Navigation/index";
+
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { useHistory } from "react-router";
 import { addEvent } from "../../store/events";
-import css from "./CreateEvent.css";
+
 function AddEvent() {
   const [name, setName] = useState("");
   const [pic, setPic] = useState("");
@@ -12,7 +12,7 @@ function AddEvent() {
   const [location, setLocation] = useState("");
   const [ticketCost, setTicketCost] = useState("");
   const [detail, setDetail] = useState("");
-  const [categoryId, setCategoryId] = useState("");
+ 
   const sessionUserId = useSelector((state) => state.session.user?.id);
   const dispatch = useDispatch();
   const history = useHistory();

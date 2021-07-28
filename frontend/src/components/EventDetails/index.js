@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import * as sessionActions from "../../store/session";
-import { Link } from "react-router-dom";
+
 import Navigation from "../Navigation/index";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import EditEvents from "../CreateEvent/editEvent";
 import { useHistory } from "react-router";
 
@@ -15,7 +15,7 @@ import css from "./EventDetails.css";
 
 function EventDetails() {
   const sessionUserId = useSelector((state) => state.session.user?.id);
-  const dispatch = useDispatch();
+
   const [event, setEvent] = useState([]);
   const [bookmark, setBookmark] = useState({});
   const history = useHistory();
@@ -84,7 +84,6 @@ function EventDetails() {
             alignItems: "center",
             width: "60%",
             margin: "auto",
-            paddingBottom: "20px",
             lineHeight: "2",
             border: "3px dotted",
             paddingTop: "15px",

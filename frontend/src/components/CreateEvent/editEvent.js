@@ -1,8 +1,8 @@
-import Navigation from "../Navigation/index";
+
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { useHistory, useParams} from "react-router";
+import {  useParams} from "react-router";
 import { editEvent } from "../../store/events";
 
 function EditEvents({setShowForm}) {
@@ -12,10 +12,10 @@ function EditEvents({setShowForm}) {
    const [location, setLocation] = useState("");
    const [ticketCost, setTicketCost] = useState("");
    const [detail, setDetail] = useState("");
-   const [categoryId, setCategoryId] = useState("");
+
    const { id } = useParams();
    const dispatch = useDispatch();
-   const history = useHistory();
+
    const [isLoaded, setIsLoaded] = useState(false);
 
    useEffect(() => {
