@@ -65,8 +65,6 @@ function EventDetails() {
     });
     history.push("/");
   };
-  
-
   function click() {
     setShowForm(true);
   }
