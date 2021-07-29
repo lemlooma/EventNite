@@ -80,7 +80,6 @@ function EventDetails() {
         <p
           style={{
             textAlign: "justify",
-            
             display: "flex",
             alignItems: "center",
             width: "60%",
