@@ -72,9 +72,8 @@ function EventDetails() {
 
   return (
     <div>
-      
-      <Navigation />
 
+      <Navigation />
       <EventPageHeader event={event} />
       <h2 className="bodytitle"> Event Details </h2>
       <div className="event-body-container">
