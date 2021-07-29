@@ -72,6 +72,7 @@ function EventDetails() {
 
   return (
     <div>
+      
       <Navigation />
 
       <EventPageHeader event={event} />
