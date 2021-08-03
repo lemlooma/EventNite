@@ -17,7 +17,7 @@ Live Link: https://event-nite.herokuapp.com/
 
 # Site Walkthrough
 
-* HomePageconsists of a splash page welcome, all events, and allows users to access login, register, or use a Demo account to check out the app.
+* Home Page consists of a splash page welcome, all events, and allows users to access login, register, or use a Demo account to check out the app.
 
 * Profile Page consists of a user welcome, and is where a users bookmarked/registered events populate.
 
