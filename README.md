@@ -1,6 +1,4 @@
 # EventNite
-
-
 Eventnite is a clone of eventbrite targeted towards people looking for night time events happening in NYC. 
 
 Live Link: https://event-nite.herokuapp.com/
@@ -20,7 +18,6 @@ Live Link: https://event-nite.herokuapp.com/
 * Home Page consists of a splash page welcome, all events, and allows users to access login, register, or use a Demo account to check out the app.
 
 * Profile Page consists of a user welcome, and is where a users bookmarked/registered events populate.
-
 
 * Event details page (when you press on an event) allow the user to see the details for the events. Register/unregister, bookmark/unbookmark
   * if they are NOT the owner of the event they will not be able to delete the event/edit the event
