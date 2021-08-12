@@ -9,7 +9,7 @@ import { useHistory } from "react-router";
 
 import EventPageHeader from "../EventPageHeader";
 
-// import { Events } from '../../../../backend/db/models/event'
+
 import { csrfFetch } from "../../store/csrf";
 import css from "./EventDetails.css";
 

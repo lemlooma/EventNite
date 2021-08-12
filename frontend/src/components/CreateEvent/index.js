@@ -100,12 +100,7 @@ function AddEvent() {
                   onChange={(e) => setDetail(e.target.value)}
                 />
               </label>
-              {/* Category Type
-              <input
-                type="text"
-                value={categoryId}
-                onChange={(e) => setCategoryId(e.target.value)}
-              /> */}
+              
             </label>
             {sessionUserId && <button type="submit">Create Event!</button>}
           </div>

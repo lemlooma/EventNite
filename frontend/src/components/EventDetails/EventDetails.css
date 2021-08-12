@@ -9,7 +9,7 @@
   width: 95%;
 }
 .event-header-container {
-  /* grid-area: event-header; */
+
   display: flex;
   height: 300px;
 }

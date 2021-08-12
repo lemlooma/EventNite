@@ -1,61 +1,46 @@
-
-/* 
-.footer{
-  grid-area: foot;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0px 20px 0px;
-
-} */
-
-
 .inputContainer {
-    padding: 50px; 
-	display: flex; 
-   align-items: center;
-   justify-content: center;
-   flex-direction: column; 
-   /* height: 50%; */
-   text-align: center;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.inputForm {	
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-          0 10px 10px rgba(0,0,0,0.22);
+.inputForm {
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   width: 500px;
   top: 2px;
   height: 500px;
   margin: auto;
   text-align: center;
-  /* background-color: black; */
+
   background-image: linear-gradient(315deg, #ffff 100%, #ffffff 100%);
 }
 .input {
-   background-color: #eee;
-	border: none;
-	border-radius: 6px;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 300px;
-  top:35px;
-   
+  background-color: #eee;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 300px;
+  top: 35px;
 }
 
 .details-input {
   background-color: #eee;
-  border:none;
-	border-radius: 6px;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 300px;
-  /* height: 300px; */
-  top:35px;
-  
+  border: none;
+  border-radius: 6px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 300px;
+
+  top: 35px;
 }
 
 .h2 {
-    position: relative;
-    bottom: 50px;
+  position: relative;
+  bottom: 50px;
 }
