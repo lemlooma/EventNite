@@ -32,7 +32,7 @@ function AddEvent() {
       categoryId: 1,
       userId: +sessionUserId,
     };
-    console.log(payload);
+  
     let createdEvent = await dispatch(addEvent(payload));
     if (createdEvent) {
       history.push("/");

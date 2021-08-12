@@ -29,7 +29,7 @@ function RegistrationFormModal({ event }) {
       ),
     });
   };
-  console.log(event, registerd);
+
   return (
     <>
       {registerd ? (

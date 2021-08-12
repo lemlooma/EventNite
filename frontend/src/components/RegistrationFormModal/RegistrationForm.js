@@ -10,8 +10,7 @@ function RegistrationForm({ event, setEvent }) {
   const [registered, setRegistered] = useState(false);
   const sessionUserId = useSelector((state) => state.session.user?.id);
   const [errors, setErrors] = useState([]);
-  // console.log("kghhhhhhhhhhj")
-  // console.log(event)
+
   // form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();

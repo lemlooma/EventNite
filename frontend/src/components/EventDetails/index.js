@@ -45,7 +45,7 @@ function EventDetails() {
     });
     const data = await response.json();
     setBookmark(data);
-    console.log(data);
+  
   };
 
   const unbookmark = async () => {

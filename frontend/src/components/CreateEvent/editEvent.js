@@ -33,7 +33,7 @@ function EditEvents({setShowForm}) {
        ticketCost: +ticketCost,
        categoryId: 1,
      };
-     console.log(payload);
+    
      let editedEvent = await dispatch(editEvent(payload));
      if (editedEvent) {
       setShowForm(false)
@@ -45,8 +45,7 @@ function EditEvents({setShowForm}) {
 return (
     isLoaded && (
       <>
-        {/* <Navigation isLoaded={isLoaded} />
-        {isLoaded} */}
+     
         <div className="photoContainer">
         </div>
         <form onSubmit={handleSubmit} className="inputForm">
@@ -106,12 +105,7 @@ return (
                   onChange={(e) => setDetail(e.target.value)}
                 />
               </label>
-              {/* Category Type
-              <input
-                type="text"
-                value={categoryId}
-                onChange={(e) => setCategoryId(e.target.value)}
-              /> */}
+            
             </label>
             <button  type="submit">Edit Event</button>
           </div>

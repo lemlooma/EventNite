@@ -54,25 +54,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   User.associate = function (models) {
-    // associations can be defined here
-    // 1:Many, User <> Registrations, one user can have many registration entries
-    // User.hasMany(models.Registration, { foreignKey: "userId" });
+   
     User.hasMany(models.Bookmark, { foreignKey: "userId" });
     User.hasMany(models.Event, { foreignKey: "id" });
 
-    // Many:Many Event <> User; many users can 'bookmark' many events; each bookmark adds a row to the bookmark table
     const map = {
-      through: "Bookmark", // relationship exists 'through' the join table, bookmark
-      otherKey: "eventId", // key on Event table to reference the join table
-      foreignKey: "userId", // key on User table to reference the join table
+      through: "Bookmark",
+      otherKey: "eventId", 
+      foreignKey: "userId", 
     };
     User.belongsToMany(models.Event, map);
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
     const { id, username, email, Bookmarks } = this; // context will be the User instance
-    // console.log("fdkhjsgfhhdsz")
-    // console.log(this)
+ 
     return { id, username, email, Bookmarks };
   };
   User.prototype.validatePassword = function (password) {

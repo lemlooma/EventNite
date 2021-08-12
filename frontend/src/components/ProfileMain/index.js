@@ -17,10 +17,7 @@ function ProfileMain() {
   const userRegisteredEvents = sessionUser?.Registrations?.map(
     (b) => b.eventId
   );
-  // const [event, setEvent] = useState([]);
-  // const [bookmark, setBookmark] = useState({});
 
-  console.log({ userRegisteredEvents, userBookmarkEvents, sessionUser });
 
   const { id } = useParams();
 

@@ -32,7 +32,7 @@ const loadRegistered = (registered) => ({
 
 
 export const addEvent = (payload) => async (dispatch) => {
-  console.log(payload);
+ 
   const response = await csrfFetch("/api/events", {
     method: "POST",
     body: JSON.stringify(payload),
@@ -44,7 +44,7 @@ export const addEvent = (payload) => async (dispatch) => {
   }
 };
 export const editEvent = (payload) => async (dispatch) => {
-  console.log(payload);
+  
   const res = await csrfFetch(`/api/events/${payload.id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
@@ -70,7 +70,7 @@ export const deleteEvent = () => async (dispatch) => {
 export const registerEvent = (payload) => async (dispatch) => {
   const eventId = payload.id;
   const ticketNum = parseInt(payload.ticketNum, 10);
-  console.log("Hellllo worlddddddddd")
+ 
 
   const response = await csrfFetch(`/api/events/registration/${eventId}`, {
     method: "POST",
@@ -80,8 +80,8 @@ export const registerEvent = (payload) => async (dispatch) => {
 
   if (response.ok) {
     const event = await response.json();
-    console.log({event})
-    // dispatch(register(event));
+    
+  
   }
 };
 

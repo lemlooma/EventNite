@@ -14,7 +14,7 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const events = await Event.findAll();
     res.json(events);
-    // console.log(events)
+   
   })
 );
 
@@ -33,7 +33,7 @@ router.get(
       include: [Bookmark, Registration],
     });
     res.json(event);
-    // console.log("hello",event)
+   
   })
 );
 
